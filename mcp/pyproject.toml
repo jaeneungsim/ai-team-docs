@@ -1,0 +1,6 @@
+[project]
+name = "team-docs-mcp"
+version = "0.1.0"
+description = "Local MCP server for ai-team-docs: one read-only tool that searches the team docs."
+requires-python = ">=3.13"
+dependencies = ["mcp>=2.3,<3", "boto3>=1.40"]

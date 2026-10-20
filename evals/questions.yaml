@@ -1,0 +1,258 @@
+# Questions for the retrieval and answer evaluation.
+#
+#   id        q01, q02, ...
+#   by        who wrote the question: claude, claude-low-overlap or user. Claude also wrote the docs,
+#             so its questions may share their words. claude-low-overlap questions avoid the words
+#             of their answer pages (a test checks it), which keeps the keyword search honest.
+#   kind      paraphrase: asks in other words than the docs
+#             exact: names an identifier (a ticket, an error code, a parameter)
+#             multi: needs two pages, or a superseded decision next to the one in force
+#             none: the docs do not answer it; a good answer says so
+#   question  what an agent or a person would ask
+#   pages     titles of the pages that answer it (any of them counts as a hit); empty for none
+#             (inside [ ], put a title that has a comma in quotes)
+#   facts     what a correct answer must contain. Each item is a string, or a list of strings of
+#             which one is enough. Matched without case, as whole words.
+#
+# tests/test_questions.py checks that every page exists and every fact is in one of its pages.
+
+- id: q01
+  by: claude
+  kind: paraphrase
+  question: dev broke right after something got merged. What is the quickest way to get the previous working version running again?
+  pages: [Roll back a bad deploy on dev]
+  facts: [gh run rerun]
+
+- id: q02
+  by: claude
+  kind: paraphrase
+  question: If I redeploy an older commit to fix dev, is that the end of it, or is there something else I have to do?
+  pages: [Roll back a bad deploy on dev]
+  facts: [[revert, reverting, reverts]]
+
+- id: q03
+  by: claude
+  kind: paraphrase
+  question: The AI code review stopped running and every PR now waits for a human. How do I get the reviews going again?
+  pages: [Turn AI reviews back on after a budget stop]
+  facts: [/pr-triage/config/enabled]
+
+- id: q04
+  by: claude
+  kind: paraphrase
+  question: Someone sent me the id of a request that failed. Where can I see what the API did with it?
+  pages: [Find the logs for a request]
+  facts: [/aws/lambda/inv-api-dev-handler]
+
+- id: q05
+  by: claude
+  kind: paraphrase
+  question: Why does an item come back with a yes/no flag for whether it can be bought, instead of clients working that out from the quantity?
+  pages: [ADR-005 Return stock and derive sold_out]
+  facts: [sold_out]
+
+- id: q06
+  by: claude
+  kind: paraphrase
+  question: Why is every endpoint handled by a single function rather than one function per endpoint?
+  pages: [ADR-001 One Lambda function behind the HTTP API]
+  facts: [[log group, log groups]]
+
+- id: q07
+  by: claude
+  kind: paraphrase
+  question: When I create a new item through the API, how many units does it have, and will the shop show it as available?
+  pages: [ADR-005 Return stock and derive sold_out, Item API]
+  facts: [[sold out, sold_out]]
+
+- id: q08
+  by: claude
+  kind: paraphrase
+  question: Can a client set how many units are on hand when it creates an item?
+  pages: [Item API, Error codes]
+  facts: [invalid_item]
+
+- id: q09
+  by: claude
+  kind: paraphrase
+  question: What happens if someone sends a DELETE request for an item?
+  pages: [Error codes, Item API, ADR-001 One Lambda function behind the HTTP API]
+  facts: ["405", method_not_allowed]
+
+- id: q10
+  by: claude
+  kind: paraphrase
+  question: If I fetch an item with an id full of odd characters, do I get a bad request error?
+  pages: [Error codes]
+  facts: ["404"]
+
+- id: q11
+  by: claude
+  kind: paraphrase
+  question: Which model reads our pull requests, and roughly how much does one review cost?
+  pages: [ADR-008 Claude Haiku 4.5 through the Australian inference profile]
+  facts: [Haiku 4.5, [2 cents, two cents, "$0.02"]]
+
+- id: q12
+  by: claude
+  kind: paraphrase
+  question: When is the review bot allowed to merge a PR without a person?
+  pages: ["ADR-007 Advisory mode by default, auto-approve only when code can vouch"]
+  facts: [[auto-approve, auto approve]]
+
+- id: q13
+  by: claude
+  kind: paraphrase
+  question: How do I put the reviewer back into the mode where it only labels PRs and never approves them?
+  pages: [Review a PR again or change the review level, "ADR-007 Advisory mode by default, auto-approve only when code can vouch"]
+  facts: [advisory, /pr-triage/config/mode]
+
+- id: q14
+  by: claude
+  kind: paraphrase
+  question: A review ran while the model was down. How can I have the same commit reviewed again without pushing anything?
+  pages: [Review a PR again or change the review level]
+  facts: [rerun_review.py]
+
+- id: q15
+  by: claude
+  kind: paraphrase
+  question: What removes a ticket's test environment if its PR is just left open?
+  pages: [Clean up a stuck preview, "ADR-004 Previews per ticket, not per PR", Architecture overview]
+  facts: [24 hours]
+
+- id: q16
+  by: claude
+  kind: paraphrase
+  question: The dev deploy failed because CloudFormation was not allowed to create a new kind of resource. What is usually wrong, and where is it fixed?
+  pages: [Deploy to dev]
+  facts: [inv-preview-cfn-exec]
+
+- id: q17
+  by: claude
+  kind: paraphrase
+  question: Why does a web preview live in a folder of a shared bucket instead of getting its own distribution?
+  pages: ["ADR-004 Previews per ticket, not per PR"]
+  facts: [CloudFront]
+
+- id: q18
+  by: claude
+  kind: paraphrase
+  question: Which changes in a PR always go to a person, whatever the bot thinks?
+  pages: [Code review rules]
+  facts: [.github, infra]
+
+- id: q19
+  by: claude
+  kind: paraphrase
+  question: When does the summary of the overnight reviews come out?
+  pages: [Architecture overview, Glossary]
+  facts: ["08:00"]
+
+- id: q20
+  by: claude
+  kind: exact
+  question: What was INV-124?
+  pages: [ADR-005 Return stock and derive sold_out]
+  facts: [[sold out, sold_out]]
+
+- id: q21
+  by: claude
+  kind: exact
+  question: What is invalid_cursor, and can a client get it today?
+  pages: [Error codes, ADR-006 Cursor pagination for the item list]
+  facts: [invalid_cursor, [not yet, proposed, does not exist]]
+
+- id: q22
+  by: claude
+  kind: exact
+  question: What is stored in /pr-triage/config/limits?
+  pages: [Environments and resource names, Turn AI reviews back on after a budget stop]
+  facts: [daily_reviews, monthly_usd]
+
+- id: q23
+  by: claude
+  kind: exact
+  question: At what log level is a 404 response written?
+  pages: [Find the logs for a request]
+  facts: [WARNING]
+
+- id: q24
+  by: claude
+  kind: multi
+  question: Do the item endpoints return the stock quantity? I remember a decision that said they don't.
+  pages: [ADR-005 Return stock and derive sold_out, ADR-002 Keep stock out of item responses]
+  facts: [ADR-005, [superseded, replaced, no longer]]
+
+- id: q25
+  by: claude
+  kind: multi
+  question: Why did the team let the bot approve PRs, and how did the first try go?
+  pages: ["ADR-007 Advisory mode by default, auto-approve only when code can vouch", 2026-10-12 Review process check-in]
+  facts: [112 seconds]
+
+- id: q26
+  by: claude
+  kind: multi
+  question: Before I open my first PR, what has to be in the branch name and in the PR description?
+  pages: ["Branches, commits and PR titles", Writing the expected behavior block]
+  facts: [INV-, [expected-behavior, expected behavior]]
+
+- id: q27
+  by: claude
+  kind: none
+  question: Who is on call for the item API this week?
+  pages: []
+  facts: []
+
+- id: q28
+  by: claude
+  kind: none
+  question: How do I restore the items table from a point-in-time backup?
+  pages: []
+  facts: []
+
+- id: q29
+  by: claude
+  kind: none
+  question: What is the latency target for GET /items?
+  pages: []
+  facts: []
+
+# Written by Claude for the user, avoiding the words of the answer pages (by: claude-low-overlap).
+# Their word overlap with the answer pages is checked in tests/test_questions.py.
+
+- id: q30
+  by: claude-low-overlap
+  kind: paraphrase
+  question: Our coding bots keep tripping the same automated gate on different PRs. Do we patch up each one, or is there a better place to deal with it?
+  pages: [Working with AI coding agents]
+  facts: [AGENTS.md]
+
+- id: q31
+  by: claude-low-overlap
+  kind: paraphrase
+  question: I'm new and want to poke at the backend on my laptop without touching the cloud. What do I need running?
+  pages: [Start here]
+  facts: [[dynamodb-local, DynamoDB Local]]
+
+- id: q32
+  by: claude-low-overlap
+  kind: paraphrase
+  question: What happens to an earlier thumbs-up when the author adds more work to the same pull request?
+  pages: [Code review rules]
+  facts: [[dismisses, dismissed, dismiss]]
+
+- id: q33
+  by: claude-low-overlap
+  kind: paraphrase
+  question: What catches a PR write-up that tries to sweet-talk the bot into saying yes?
+  pages: [Glossary, Code review rules, 2026-10-12 Review process check-in]
+  facts: [[tripwire, needs human review]]
+
+- id: q34
+  by: claude-low-overlap
+  kind: paraphrase
+  question: Is there a live, customer-facing setup anywhere, or only places for trying things out?
+  pages: [Environments and resource names, Inventory Team, Deploy to dev]
+  facts: [[no production, out of scope]]

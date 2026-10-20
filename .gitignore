@@ -1,0 +1,10 @@
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ruff_cache/
+infra/node_modules/
+infra/cdk.out/
+infra/cdk.context.json
+demo-docs/.upload-state.json
+.DS_Store

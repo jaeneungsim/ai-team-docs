@@ -1,0 +1,42 @@
+<h2>How dev gets deployed</h2>
+<p>Nobody deploys <code>dev</code> by hand. Merging a PR into the <code>dev</code> branch starts the <code>deploy-dev</code> workflow:</p>
+<table><tbody>
+<tr>
+<th>Repo</th>
+<th>What <code>deploy-dev</code> does</th>
+</tr>
+<tr>
+<td><code>demo-inventory-api</code></td>
+<td><code>cdk deploy</code> of the stack <code>inv-api-dev</code></td>
+</tr>
+<tr>
+<td><code>demo-inventory-web</code></td>
+<td>publishes <code>src/</code> to the <code>dev/</code> prefix of the web bucket</td>
+</tr>
+</tbody></table>
+<p>After the API deploy, pr-triage runs a read-only check on dev: it calls the <code>GET</code> items from the merged PR's expected behavior and comments on the PR. If the check fails, the PR gets the label <code>triage: post-merge failed</code>.</p>
+<h2>Check a deploy</h2>
+<ol>
+<li>In GitHub, open Actions &rarr; <code>deploy-dev</code> and confirm that the run for your merge commit is green.</li>
+<li>Call the health route:</li>
+</ol>
+<ac:structured-macro ac:name="code" ac:schema-version="1" ac:macro-id="811d7895-c667-4b5d-a6ed-214b650e722b"><ac:parameter ac:name="language">bash</ac:parameter><ac:plain-text-body><![CDATA[API_URL=$(aws cloudformation describe-stacks --stack-name inv-api-dev \
+  --query "Stacks[0].Outputs[?OutputKey=='ApiUrl'].OutputValue" --output text \
+  --profile jae-dev --region ap-southeast-2)
+curl -s "${API_URL%/}/health"]]></ac:plain-text-body></ac:structured-macro>
+<p>The answer is <code>{&quot;ok&quot;: true}</code>. The <code>ApiUrl</code> output ends with a slash; <code>${API_URL%/}</code> removes it so that the path does not start with a double slash.</p>
+<h2>When the deploy fails</h2>
+<ol>
+<li>Read the stack events:</li>
+</ol>
+<ac:structured-macro ac:name="code" ac:schema-version="1" ac:macro-id="30988d15-5423-405e-96a4-895727611e72"><ac:parameter ac:name="language">bash</ac:parameter><ac:plain-text-body><![CDATA[aws cloudformation describe-stack-events --stack-name inv-api-dev --max-items 20 \
+  --profile jae-dev --region ap-southeast-2]]></ac:plain-text-body></ac:structured-macro>
+<ol start="2">
+<li>The usual cause is that the CloudFormation role <code>inv-preview-cfn-exec</code> lacks a permission for a new resource type. On 2026-10-11 it lacked <code>apigateway:TagResource</code>. That role is defined in pr-triage (<code>infra/lib/preview-platform-stack.ts</code>), so the fix is a pr-triage PR, not an app PR.</li>
+<li>After the fix, re-run the failed <code>deploy-dev</code> run: Actions &rarr; the run &rarr; Re-run all jobs.</li>
+</ol>
+<ac:structured-macro ac:name="note" ac:schema-version="1" ac:macro-id="e10ec69f-804c-4eb3-872a-30ad49b90902"><ac:parameter ac:name="title">Deploying from a laptop</ac:parameter><ac:rich-text-body>
+<p>This is a last resort for when the workflow itself is broken. From <code>infra/</code> in the API repo, with a session that may pass the CloudFormation role:</p>
+<ac:structured-macro ac:name="code" ac:schema-version="1" ac:macro-id="0e1355f2-c3fd-42bf-81d0-b0e500b669c4"><ac:parameter ac:name="language">bash</ac:parameter><ac:plain-text-body><![CDATA[npx cdk deploy --require-approval never --role-arn "$CFN_EXEC_ROLE_ARN" -c stage=dev]]></ac:plain-text-body></ac:structured-macro>
+</ac:rich-text-body></ac:structured-macro>
+<p>Production is out of scope for this team. Promotion beyond <code>dev</code> is always done by a person.</p>

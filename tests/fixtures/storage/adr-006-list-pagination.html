@@ -1,0 +1,45 @@
+<p><ac:structured-macro ac:name="status" ac:schema-version="1" ac:macro-id="33531ec5-b4f6-45e1-8207-af92355920f7"><ac:parameter ac:name="colour">Blue</ac:parameter><ac:parameter ac:name="title">Proposed</ac:parameter></ac:structured-macro> &middot; Proposed 2026-10-12 &middot; Ticket INV-125</p>
+<ac:structured-macro ac:name="info" ac:schema-version="1" ac:macro-id="eaa768ab-aae3-4469-a012-d41f8b8730cb"><ac:parameter ac:name="title">Not decided yet</ac:parameter><ac:rich-text-body>
+<p>Do not build on this until the status is Accepted. Comment on this page with objections.</p>
+</ac:rich-text-body></ac:structured-macro>
+<h2>Context</h2>
+<p>INV-125 asks for at most 20 items per response from <code>GET /items</code>, with a <code>next</code> cursor that returns the following page. Today the handler scans the whole table, sorts the items (numeric ids first in number order, then the other ids) and returns all of them.</p>
+<h2>Options</h2>
+<table><tbody>
+<tr>
+<th>Option</th>
+<th>Order across pages</th>
+<th>Cost per request</th>
+<th>Notes</th>
+</tr>
+<tr>
+<td>A. DynamoDB scan pages, cursor is <code>LastEvaluatedKey</code></td>
+<td>Not stable</td>
+<td>One page of reads</td>
+<td>The current sort order is lost</td>
+</tr>
+<tr>
+<td>B. Read all, sort, return 20, cursor is the last id returned</td>
+<td>Stable</td>
+<td>Grows with the table</td>
+<td>Same order as today</td>
+</tr>
+<tr>
+<td>C. Add an index with a sort key</td>
+<td>Stable</td>
+<td>One page of reads</td>
+<td>Needs a table change and a backfill</td>
+</tr>
+</tbody></table>
+<h2>Proposal</h2>
+<p>Option B while the table has fewer than 1,000 items, then revisit with option C.</p>
+<ul>
+<li>The cursor is opaque to clients: base64 of the last id returned. Clients send it back as <code>?cursor=&lt;value&gt;</code>.</li>
+<li>The response keeps the <code>items</code> array and adds <code>next</code> only when more items exist.</li>
+<li>An invalid cursor returns <code>400 {&quot;error&quot;: &quot;invalid_cursor&quot;}</code>.</li>
+</ul>
+<h2>Open questions</h2>
+<ul>
+<li>Should clients be able to ask for fewer than 20 items?</li>
+<li>Does the web list page need a &quot;load more&quot; button in the same ticket?</li>
+</ul>

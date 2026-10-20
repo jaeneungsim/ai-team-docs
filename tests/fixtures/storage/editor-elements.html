@@ -1,0 +1,41 @@
+<ac:macro ac:name="details"><ac:rich-text-body><table data-layout="default"><colgroup><col style="width: 150.0px;" /><col style="width: 580.0px;" /></colgroup><tbody><tr><th><p><strong>Status</strong></p></th><td><p><ac:structured-macro ac:name="status" ac:schema-version="1" ac:macro-id="3f0c9a52-1b7e-4d6a-8e21-5c4b7a9d0e13"><ac:parameter ac:name="title">NOT STARTED</ac:parameter></ac:structured-macro> / <ac:structured-macro ac:name="status" ac:schema-version="1" ac:macro-id="8a2d4e61-0c3f-4b95-a7d8-1e6f2b9c4a50"><ac:parameter ac:name="title">IN PROGRESS</ac:parameter><ac:parameter ac:name="colour">Blue</ac:parameter></ac:structured-macro> / <ac:structured-macro ac:name="status" ac:schema-version="1" ac:macro-id="c71e5b03-9d4a-4f28-b6e0-7a3c2d8f1b94"><ac:parameter ac:name="title">SHIPPED</ac:parameter><ac:parameter ac:name="colour">Green</ac:parameter></ac:structured-macro></p></td></tr><tr><th><p><strong>Ticket</strong></p></th><td><p>INV-125</p></td></tr><tr><th><p><strong>Owner</strong></p></th><td><p><ac:placeholder>Add the ticket owner</ac:placeholder></p></td></tr><tr><th><p><strong>Target date</strong></p></th><td><p><ac:placeholder>Add the day the cursor ships</ac:placeholder></p></td></tr></tbody></table></ac:rich-text-body></ac:macro>
+<table data-layout="default"><colgroup><col style="width: 180.0px;" /><col style="width: 580.0px;" /></colgroup><tbody><tr><td data-highlight-colour="#f4f5f7"><p><strong>Team</strong></p></td><td><p>Inventory</p></td></tr><tr><td data-highlight-colour="#f4f5f7"><p><strong>Repos</strong></p></td><td><p><ac:placeholder>List the repos this change touches</ac:placeholder></p></td></tr></tbody></table>
+<h2><ac:emoticon ac:name="blue-star" ac:emoji-shortname=":dart:" ac:emoji-id="1f3af" ac:emoji-fallback="🎯" />&nbsp;Goal</h2>
+<p>Ship the item list with a cursor before the stock fields change again.&nbsp;The list keeps its order when items are added.</p>
+<h2><ac:emoticon ac:name="blue-star" ac:emoji-shortname=":blue_book:" ac:emoji-id="1f4d8" ac:emoji-fallback="\uD83D\uDCD8" />&nbsp;Background</h2>
+<p><ac:placeholder>Say why page numbers break here, for example &quot;an item added on page 1 pushes another one onto page 2 twice&quot;.</ac:placeholder></p>
+<table data-layout="default"><colgroup><col style="width: 190.0px;" /><col style="width: 570.0px;" /></colgroup><tbody><tr><th data-highlight-colour="#e3fcef"><p><strong>Must have</strong></p></th><th data-highlight-colour="#ffffff"><ul><li><p>A cursor in every list response</p></li><li><p /></li></ul></th></tr><tr><td data-highlight-colour="#fffae6"><p><strong>Nice to have</strong></p></td><td><ul><li><p><ac:placeholder>Add a goal</ac:placeholder></p></li><li><p /></li></ul></td></tr></tbody></table>
+<h2><ac:emoticon ac:name="blue-star" ac:emoji-shortname=":rainbow:" ac:emoji-id="1f308" ac:emoji-fallback="\uD83C\uDF08" />&nbsp;Options</h2>
+<table data-layout="default"><colgroup><col style="width: 160.0px;" /><col style="width: 290.0px;" /><col style="width: 310.0px;" /></colgroup><tbody><tr><th><p /></th><th><p><strong>Option A</strong></p></th><th><p><strong>Option B</strong></p></th></tr><tr><th><p><strong>Summary</strong></p></th><td><p>Opaque cursor</p></td><td><p>Page number</p></td></tr><tr><th><p><strong>Pros and cons</strong></p></th><td><p><ac:emoticon ac:name="plus" ac:emoji-shortname=":plus:" ac:emoji-id="atlassian-plus" ac:emoji-fallback=":plus:" /> Stable when items are added</p><p><ac:emoticon ac:name="minus" ac:emoji-shortname=":minus:" ac:emoji-id="atlassian-minus" ac:emoji-fallback=":minus:" /> Cannot jump to a page</p></td><td><p><ac:emoticon ac:name="plus" ac:emoji-shortname=":plus:" ac:emoji-id="atlassian-plus" ac:emoji-fallback=":plus:" /> Simple links</p><p><ac:emoticon ac:name="minus" ac:emoji-shortname=":minus:" ac:emoji-id="atlassian-minus" ac:emoji-fallback=":minus:" /> Skips or repeats items</p></td></tr></tbody></table>
+<h2><ac:emoticon ac:name="blue-star" ac:emoji-shortname=":busts_in_silhouette:" ac:emoji-id="1f465" ac:emoji-fallback="\uD83D\uDC65" />&nbsp;Attendees</h2>
+<ul><li><p /></li><li><p><ac:placeholder>Type @ to add people</ac:placeholder></p></li></ul>
+<h2><ac:emoticon ac:name="blue-star" ac:emoji-shortname=":speaking_head:" ac:emoji-id="1f5e3" ac:emoji-fallback="\uD83D\uDDE3" />&nbsp;Discussion</h2>
+<table data-layout="default"><colgroup><col style="width: 120.0px;" /><col style="width: 120.0px;" /><col style="width: 200.0px;" /><col style="width: 320.0px;" /></colgroup><tbody><tr><th data-highlight-colour="#deebff"><p><strong>Time</strong></p></th><th data-highlight-colour="#deebff"><p><strong>Item</strong></p></th><th data-highlight-colour="#deebff"><p><strong>Who</strong></p></th><th data-highlight-colour="#deebff"><p><strong>Notes</strong></p></th></tr><tr><td><p>10 min</p></td><td><p>Cursor format</p></td><td><p><ac:placeholder>Add a name</ac:placeholder></p></td><td><ul><li><p>Base64 of the last item id</p></li><li><p>Reject a cursor from another list with <code>invalid_cursor</code></p></li></ul></td></tr><tr><td><p><br /></p></td><td><p><br /></p></td><td><p><br /></p></td><td><p><br /></p></td></tr></tbody></table>
+<h2><ac:emoticon ac:name="blue-star" ac:emoji-shortname=":white_check_mark:" ac:emoji-id="2705" ac:emoji-fallback="✅" />&nbsp;Action items</h2>
+<ac:task-list>
+<ac:task>
+
+    <ac:task-status>incomplete</ac:task-status>
+
+</ac:task>
+<ac:task>
+<ac:task-id>2</ac:task-id>
+<ac:task-status>incomplete</ac:task-status>
+<ac:task-body><span class="placeholder-inline-tasks"><ac:placeholder>Add an action item</ac:placeholder></span></ac:task-body>
+</ac:task>
+</ac:task-list>
+<h2><ac:emoticon ac:name="blue-star" ac:emoji-shortname=":arrow_heading_up:" ac:emoji-id="2934" ac:emoji-fallback="⤴" />&nbsp;Decisions</h2>
+<p><ac:placeholder>Record what was decided</ac:placeholder></p>
+<ac:adf-extension>
+<ac:adf-node type="decision-list">
+    <ac:adf-attribute key="local-id">5e8b2c47-93a1-4f0d-b6c2-7d1e9a4f3b28</ac:adf-attribute>
+    <ac:adf-node type="decision-item">
+        <ac:adf-attribute key="local-id">a4c7e9f2-6b13-4d85-9e0a-2f5b8c1d7e63</ac:adf-attribute>
+        <ac:adf-attribute key="state">DECIDED</ac:adf-attribute>
+    </ac:adf-node>
+</ac:adf-node>
+</ac:adf-extension>
+<h2><ac:emoticon ac:name="blue-star" ac:emoji-shortname=":card_box:" ac:emoji-id="1f5c3" ac:emoji-fallback="🗃️" />&nbsp;Related pages</h2>
+<p><ac:placeholder>Link the decision record when there is one</ac:placeholder></p>
+<p><br /></p>
+<p />

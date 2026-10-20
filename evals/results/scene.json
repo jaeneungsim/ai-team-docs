@@ -1,0 +1,86 @@
+[
+  {
+    "label": "before the edit (runbook version 1)",
+    "run_at": "2026-10-20T09:24:38+00:00",
+    "question": "dev broke right after something got merged. What is the quickest way to get the previous working version running again?",
+    "agents": {
+      "copy": {
+        "suggests_rerun": true,
+        "says_do_not_rerun": false,
+        "says_revert": true,
+        "usd": 0.00172,
+        "answer": "According to the Roll back a bad deploy on dev runbook, the quickest way is the **fast path: redeploy the last good commit**.\n\nUse these commands:\n\n```bash\ngh run list --workflow deploy-dev --repo jaeneungsim/demo-inventory-api --limit 10\ngh run rerun <run-id> --repo jaeneungsim/demo-inventory-api\n```\n\nFind the run of the last good commit and re-run it. This deploys that run's commit again without needing to make code changes.\n\n**Important:** This only changes what is deployed—the `dev` branch still has the bad commit. You must follow step 3 immediately after to revert the commit in a PR, otherwise the next merge will deploy the bad code again."
+      },
+      "managed KB": {
+        "suggests_rerun": true,
+        "says_do_not_rerun": false,
+        "says_revert": true,
+        "usd": 0.00243,
+        "answer": "According to the \"Roll back a bad deploy on dev\" docs (page [1]), the quickest way is the **fast path**:\n\n1. Find the last good commit's deploy run using:\n   ```bash\n   gh run list --workflow deploy-dev --repo jaeneungsim/demo-inventory-api --limit 10\n   ```\n\n2. Re-run that old deploy:\n   ```bash\n   gh run rerun <run-id> --repo jaeneungsim/demo-inventory-api\n   ```\n\nThis redeploys the last good commit immediately without changing the branch.\n\n**Important:** This only fixes what's deployed. The bad commit stays in the dev branch, so the next merge will deploy it again. You must immediately do step 3: create a revert PR to remove the bad commit from the branch itself."
+      },
+      "team-docs": {
+        "suggests_rerun": true,
+        "says_do_not_rerun": false,
+        "says_revert": false,
+        "usd": 0.00237,
+        "answer": "Based on the docs, the quickest way is the **fast path** from page [1]:\n\n1. Find the last good commit's deploy run:\n```bash\ngh run list --workflow deploy-dev --repo jaeneungsim/demo-inventory-api --limit 10\n```\n\n2. Re-run that deployment:\n```bash\ngh run rerun <run-id> --repo jaeneungsim/demo-inventory-api\n```\n\nThis redeploys the last good commit to dev immediately.\n\n**Important:** The docs warn that this only fixes what's deployed—the `dev` branch still has the bad commit. You must do step 3 (from page [5]) right after to fix the branch itself, or the next merge will deploy the bad commit again."
+      }
+    }
+  },
+  {
+    "label": "after the edit: our search synced, the knowledge base not yet",
+    "run_at": "2026-10-20T09:32:17+00:00",
+    "question": "dev broke right after something got merged. What is the quickest way to get the previous working version running again?",
+    "agents": {
+      "copy": {
+        "suggests_rerun": true,
+        "says_do_not_rerun": false,
+        "says_revert": true,
+        "usd": 0.00172,
+        "answer": "According to the Roll back a bad deploy on dev runbook, the quickest way is the **fast path: redeploy the last good commit**.\n\nUse these commands:\n\n```bash\ngh run list --workflow deploy-dev --repo jaeneungsim/demo-inventory-api --limit 10\ngh run rerun <run-id> --repo jaeneungsim/demo-inventory-api\n```\n\nFind the run of the last good commit and re-run it. This deploys that run's commit again without needing to make code changes.\n\n**Important:** This only changes what is deployed—the `dev` branch still has the bad commit. You must follow step 3 immediately after to revert the commit in a PR, otherwise the next merge will deploy the bad code again."
+      },
+      "managed KB": {
+        "suggests_rerun": true,
+        "says_do_not_rerun": false,
+        "says_revert": true,
+        "usd": 0.00243,
+        "answer": "According to the \"Roll back a bad deploy on dev\" docs (page [1]), the quickest way is the **fast path**:\n\n1. Find the last good commit's deploy run using:\n   ```bash\n   gh run list --workflow deploy-dev --repo jaeneungsim/demo-inventory-api --limit 10\n   ```\n\n2. Re-run that old deploy:\n   ```bash\n   gh run rerun <run-id> --repo jaeneungsim/demo-inventory-api\n   ```\n\nThis redeploys the last good commit immediately without changing the branch.\n\n**Important:** This only fixes what's deployed. The bad commit stays in the dev branch, so the next merge will deploy it again. You must immediately do step 3: create a revert PR to remove the bad commit from the branch itself."
+      },
+      "team-docs": {
+        "suggests_rerun": false,
+        "says_do_not_rerun": true,
+        "says_revert": true,
+        "usd": 0.00247,
+        "answer": "According to the docs on rolling back a bad deploy on dev, the quickest way is to use the revert PR. \n\nFrom page [1] \"Roll back a bad deploy on dev > 2. Do not re-run old deploys\" (version 2, edited 2026-10-20 09:24 UTC):\n\n> Re-running an old `deploy-dev` run used to be the fast path. The team stopped on 2026-10-20: the redeployed commit only lasts until the next merge, which deploys the bad commit again. Go straight to step 3. The revert PR is the only way back.\n\nSo you should skip re-running old deploys and go straight to creating a revert PR. The warning also notes: \"If `dev` must work before the revert PR is merged, ask in the team channel.\""
+      }
+    }
+  },
+  {
+    "label": "after a manual knowledge base sync",
+    "run_at": "2026-10-20T09:35:16+00:00",
+    "question": "dev broke right after something got merged. What is the quickest way to get the previous working version running again?",
+    "agents": {
+      "copy": {
+        "suggests_rerun": true,
+        "says_do_not_rerun": false,
+        "says_revert": true,
+        "usd": 0.00172,
+        "answer": "According to the Roll back a bad deploy on dev runbook, the quickest way is the **fast path: redeploy the last good commit**.\n\nUse these commands:\n\n```bash\ngh run list --workflow deploy-dev --repo jaeneungsim/demo-inventory-api --limit 10\ngh run rerun <run-id> --repo jaeneungsim/demo-inventory-api\n```\n\nFind the run of the last good commit and re-run it. This deploys that run's commit again without needing to make code changes.\n\n**Important:** This only changes what is deployed—the `dev` branch still has the bad commit. You must follow step 3 immediately after to revert the commit in a PR, otherwise the next merge will deploy the bad code again."
+      },
+      "managed KB": {
+        "suggests_rerun": false,
+        "says_do_not_rerun": true,
+        "says_revert": true,
+        "usd": 0.00284,
+        "answer": "According to the docs, the quickest way is to **create a revert PR**. Here's why:\n\nThe team stopped re-running old deploy-dev runs on 2026-10-20 because redeployed commits only last until the next merge, which deploys the bad commit again. So that's no longer the fast path.\n\nInstead, follow these steps from page [1]:\n\n1. Find the bad commit using `git switch dev && git pull --ff-only` and `git log --oneline -5`\n2. Create a revert PR with `git switch -c` to a new branch, `git revert --no-edit <bad-commit-sha>`, amend the commit message with your ticket key, and push it\n3. Open the PR with type bugfix and an expected behavior block\n4. pr-triage reviews it like any other PR, and when merged, deploy-dev automatically deploys the reverted code\n\nThis is the only reliable way back. If dev must work before the revert PR is merged, ask in the team channel."
+      },
+      "team-docs": {
+        "suggests_rerun": false,
+        "says_do_not_rerun": true,
+        "says_revert": true,
+        "usd": 0.00246,
+        "answer": "According to the docs on rolling back a bad deploy on dev, the quickest way is to use the revert PR. The docs explicitly state:\n\n> Re-running an old `deploy-dev` run used to be the fast path. The team stopped on 2026-10-20: the redeployed commit only lasts until the next merge, which deploys the bad commit again. Go straight to step 3. The revert PR is the only way back.\n\nSo you should skip re-running old deploys and go straight to creating a revert PR. The warning also emphasizes: \"Do not re-run old `deploy-dev` runs.\"\n\n(From page [1] \"Roll back a bad deploy on dev > 2. Do not re-run old deploys\", version 2, edited 2026-10-20 09:24 UTC)"
+      }
+    }
+  }
+]

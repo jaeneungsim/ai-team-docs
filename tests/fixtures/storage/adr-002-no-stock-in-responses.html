@@ -1,0 +1,10 @@
+<p><ac:structured-macro ac:name="status" ac:schema-version="1" ac:macro-id="9592b698-d2a8-48c1-86d5-2da76bd86e09"><ac:parameter ac:name="colour">Grey</ac:parameter><ac:parameter ac:name="title">Superseded</ac:parameter></ac:structured-macro> &middot; Decided 2026-10-11 &middot; Ticket INV-100 &middot; Superseded on 2026-10-12 by <ac:link><ri:page ri:content-title="ADR-005 Return stock and derive sold_out" /><ac:plain-text-link-body><![CDATA[ADR-005 Return stock and derive sold_out]]></ac:plain-text-link-body></ac:link></p>
+<ac:structured-macro ac:name="warning" ac:schema-version="1" ac:macro-id="e1397a36-4fc7-4136-a23e-2ed88a0e5e4c"><ac:rich-text-body>
+<p>This decision is no longer in force. Item responses now include <code>stock</code> and <code>sold_out</code>.</p>
+</ac:rich-text-body></ac:structured-macro>
+<h2>Context</h2>
+<p>The table needed a <code>stock</code> attribute from the start, because restocking is planned as a separate flow. Nothing on the web pages showed stock yet.</p>
+<h2>Decision</h2>
+<p>Store <code>stock</code> in the table, but return only <code>id</code>, <code>name</code> and <code>price</code> from <code>GET /items</code> and <code>GET /items/{id}</code>.</p>
+<h2>Why it was replaced</h2>
+<p>INV-123 asked for the stock quantity on the item detail page, so the API had to return it.</p>

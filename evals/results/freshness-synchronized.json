@@ -1,0 +1,51 @@
+{
+  "note": "First attempt, stopped after 4 runs. Each edit was made right after the previous one became visible, which is right after a sync run, so runs 2-4 measure the worst case (a full 10-minute cycle). Run 1 started at an arbitrary time. Times are to the second (from the run log).",
+  "summary": {
+    "runs": 4,
+    "worst_case_runs": [
+      2,
+      3,
+      4
+    ],
+    "to_index_s_max": 590,
+    "to_visible_s_max": 605
+  },
+  "runs": [
+    {
+      "run": 1,
+      "version": 1,
+      "edited": "2026-10-19T05:36:47+00:00",
+      "synced": "2026-10-19T05:42:01+00:00",
+      "visible": "2026-10-19T05:42:10+00:00",
+      "to_index_s": 314,
+      "to_visible_s": 323
+    },
+    {
+      "run": 2,
+      "version": 2,
+      "edited": "2026-10-19T05:42:11+00:00",
+      "synced": "2026-10-19T05:52:01+00:00",
+      "visible": "2026-10-19T05:52:14+00:00",
+      "to_index_s": 590,
+      "to_visible_s": 603
+    },
+    {
+      "run": 3,
+      "version": 3,
+      "edited": "2026-10-19T05:52:14+00:00",
+      "synced": "2026-10-19T06:02:00+00:00",
+      "visible": "2026-10-19T06:02:19+00:00",
+      "to_index_s": 586,
+      "to_visible_s": 605
+    },
+    {
+      "run": 4,
+      "version": 4,
+      "edited": "2026-10-19T06:02:21+00:00",
+      "synced": "2026-10-19T06:12:01+00:00",
+      "visible": "2026-10-19T06:12:10+00:00",
+      "to_index_s": 580,
+      "to_visible_s": 589
+    }
+  ]
+}

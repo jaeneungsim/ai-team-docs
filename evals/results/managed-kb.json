@@ -1,0 +1,768 @@
+{
+  "run_at": "2026-10-20T09:16:58+00:00",
+  "knowledge_base": {
+    "embedding": "MANAGED",
+    "reranking": "MANAGED",
+    "chunking": "default",
+    "acl": false,
+    "ingestion": {
+      "status": "COMPLETE",
+      "started_at": "2026-10-20T09:13:23+00:00",
+      "seconds": 182,
+      "statistics": {
+        "numberOfDocumentsScanned": 30,
+        "numberOfMetadataDocumentsScanned": 0,
+        "numberOfNewDocumentsIndexed": 30,
+        "numberOfModifiedDocumentsIndexed": 0,
+        "numberOfMetadataDocumentsModified": 0,
+        "numberOfDocumentsDeleted": 0,
+        "numberOfDocumentsFailed": 0,
+        "numberOfDocumentsSkipped": 0
+      },
+      "text_ready_s": 143
+    }
+  },
+  "ours": "hybrid search from evals/results/retrieval.json: the same questions and pages",
+  "top_k": 5,
+  "queries": 31,
+  "median_ms": 617,
+  "unknown_pages": 0,
+  "summary": {
+    "all": {
+      "questions": 31,
+      "hybrid": {
+        "hit@5": 1.0,
+        "mrr": 0.885483870967742
+      },
+      "managed KB": {
+        "hit@5": 0.967741935483871,
+        "mrr": 0.8666666666666667
+      }
+    },
+    "kind: paraphrase": {
+      "questions": 24,
+      "hybrid": {
+        "hit@5": 1.0,
+        "mrr": 0.8520833333333333
+      },
+      "managed KB": {
+        "hit@5": 0.9583333333333334,
+        "mrr": 0.8277777777777778
+      }
+    },
+    "by: claude": {
+      "questions": 26,
+      "hybrid": {
+        "hit@5": 1.0,
+        "mrr": 0.9134615384615384
+      },
+      "managed KB": {
+        "hit@5": 0.9615384615384616,
+        "mrr": 0.8794871794871795
+      }
+    },
+    "kind: exact": {
+      "questions": 4,
+      "hybrid": {
+        "hit@5": 1.0,
+        "mrr": 1.0
+      },
+      "managed KB": {
+        "hit@5": 1.0,
+        "mrr": 1.0
+      }
+    },
+    "kind: multi": {
+      "questions": 3,
+      "hybrid": {
+        "hit@5": 1.0,
+        "mrr": 1.0
+      },
+      "managed KB": {
+        "hit@5": 1.0,
+        "mrr": 1.0
+      }
+    },
+    "by: claude-low-overlap": {
+      "questions": 5,
+      "hybrid": {
+        "hit@5": 1.0,
+        "mrr": 0.74
+      },
+      "managed KB": {
+        "hit@5": 1.0,
+        "mrr": 0.8
+      }
+    }
+  },
+  "questions": [
+    {
+      "id": "q01",
+      "by": "claude",
+      "kind": "paraphrase",
+      "question": "dev broke right after something got merged. What is the quickest way to get the previous working version running again?",
+      "pages": [
+        "Roll back a bad deploy on dev"
+      ],
+      "rank": {
+        "hybrid": 1,
+        "managed KB": 1
+      },
+      "top": [
+        "Roll back a bad deploy on dev",
+        "Roll back a bad deploy on dev",
+        "Deploy to dev",
+        "Deploy to dev",
+        "Writing the expected behavior block"
+      ],
+      "ms": 533
+    },
+    {
+      "id": "q02",
+      "by": "claude",
+      "kind": "paraphrase",
+      "question": "If I redeploy an older commit to fix dev, is that the end of it, or is there something else I have to do?",
+      "pages": [
+        "Roll back a bad deploy on dev"
+      ],
+      "rank": {
+        "hybrid": 1,
+        "managed KB": 1
+      },
+      "top": [
+        "Roll back a bad deploy on dev",
+        "Roll back a bad deploy on dev",
+        "Deploy to dev",
+        "Deploy to dev",
+        "Code review rules"
+      ],
+      "ms": 447
+    },
+    {
+      "id": "q03",
+      "by": "claude",
+      "kind": "paraphrase",
+      "question": "The AI code review stopped running and every PR now waits for a human. How do I get the reviews going again?",
+      "pages": [
+        "Turn AI reviews back on after a budget stop"
+      ],
+      "rank": {
+        "hybrid": 1,
+        "managed KB": 1
+      },
+      "top": [
+        "Turn AI reviews back on after a budget stop",
+        "Turn AI reviews back on after a budget stop",
+        "2026-10-12 Review process check-in",
+        "Turn AI reviews back on after a budget stop",
+        "Review a PR again or change the review level"
+      ],
+      "ms": 867
+    },
+    {
+      "id": "q04",
+      "by": "claude",
+      "kind": "paraphrase",
+      "question": "Someone sent me the id of a request that failed. Where can I see what the API did with it?",
+      "pages": [
+        "Find the logs for a request"
+      ],
+      "rank": {
+        "hybrid": 1,
+        "managed KB": 1
+      },
+      "top": [
+        "Find the logs for a request",
+        "Find the logs for a request",
+        "Find the logs for a request",
+        "Find the logs for a request",
+        "Item API"
+      ],
+      "ms": 688
+    },
+    {
+      "id": "q05",
+      "by": "claude",
+      "kind": "paraphrase",
+      "question": "Why does an item come back with a yes/no flag for whether it can be bought, instead of clients working that out from the quantity?",
+      "pages": [
+        "ADR-005 Return stock and derive sold_out"
+      ],
+      "rank": {
+        "hybrid": 2,
+        "managed KB": null
+      },
+      "top": [
+        "ADR-006 Cursor pagination for the item list",
+        "ADR-002 Keep stock out of item responses",
+        "Item API",
+        "Writing the expected behavior block",
+        "ADR-007 Advisory mode by default, auto-approve only when code can vouch"
+      ],
+      "ms": 531
+    },
+    {
+      "id": "q06",
+      "by": "claude",
+      "kind": "paraphrase",
+      "question": "Why is every endpoint handled by a single function rather than one function per endpoint?",
+      "pages": [
+        "ADR-001 One Lambda function behind the HTTP API"
+      ],
+      "rank": {
+        "hybrid": 1,
+        "managed KB": 1
+      },
+      "top": [
+        "ADR-001 One Lambda function behind the HTTP API",
+        "Architecture overview",
+        "ADR-004 Previews per ticket, not per PR",
+        "Inventory Team",
+        "ADR-004 Previews per ticket, not per PR"
+      ],
+      "ms": 555
+    },
+    {
+      "id": "q07",
+      "by": "claude",
+      "kind": "paraphrase",
+      "question": "When I create a new item through the API, how many units does it have, and will the shop show it as available?",
+      "pages": [
+        "ADR-005 Return stock and derive sold_out",
+        "Item API"
+      ],
+      "rank": {
+        "hybrid": 1,
+        "managed KB": 1
+      },
+      "top": [
+        "Item API",
+        "ADR-005 Return stock and derive sold_out",
+        "Item API",
+        "Item API",
+        "ADR-002 Keep stock out of item responses"
+      ],
+      "ms": 654
+    },
+    {
+      "id": "q08",
+      "by": "claude",
+      "kind": "paraphrase",
+      "question": "Can a client set how many units are on hand when it creates an item?",
+      "pages": [
+        "Item API",
+        "Error codes"
+      ],
+      "rank": {
+        "hybrid": 4,
+        "managed KB": 3
+      },
+      "top": [
+        "ADR-006 Cursor pagination for the item list",
+        "ADR-005 Return stock and derive sold_out",
+        "Item API",
+        "Item API",
+        "ADR-006 Cursor pagination for the item list"
+      ],
+      "ms": 781
+    },
+    {
+      "id": "q09",
+      "by": "claude",
+      "kind": "paraphrase",
+      "question": "What happens if someone sends a DELETE request for an item?",
+      "pages": [
+        "Error codes",
+        "Item API",
+        "ADR-001 One Lambda function behind the HTTP API"
+      ],
+      "rank": {
+        "hybrid": 2,
+        "managed KB": 1
+      },
+      "top": [
+        "Error codes",
+        "Item API",
+        "Clean up a stuck preview",
+        "ADR-006 Cursor pagination for the item list",
+        "ADR-002 Keep stock out of item responses"
+      ],
+      "ms": 701
+    },
+    {
+      "id": "q10",
+      "by": "claude",
+      "kind": "paraphrase",
+      "question": "If I fetch an item with an id full of odd characters, do I get a bad request error?",
+      "pages": [
+        "Error codes"
+      ],
+      "rank": {
+        "hybrid": 1,
+        "managed KB": 1
+      },
+      "top": [
+        "Error codes",
+        "Error codes",
+        "ADR-003 Error response format",
+        "Error codes",
+        "Find the logs for a request"
+      ],
+      "ms": 671
+    },
+    {
+      "id": "q11",
+      "by": "claude",
+      "kind": "paraphrase",
+      "question": "Which model reads our pull requests, and roughly how much does one review cost?",
+      "pages": [
+        "ADR-008 Claude Haiku 4.5 through the Australian inference profile"
+      ],
+      "rank": {
+        "hybrid": 1,
+        "managed KB": 1
+      },
+      "top": [
+        "ADR-008 Claude Haiku 4.5 through the Australian inference profile",
+        "Inventory Team",
+        "Inventory Team",
+        "Turn AI reviews back on after a budget stop",
+        "Turn AI reviews back on after a budget stop"
+      ],
+      "ms": 731
+    },
+    {
+      "id": "q12",
+      "by": "claude",
+      "kind": "paraphrase",
+      "question": "When is the review bot allowed to merge a PR without a person?",
+      "pages": [
+        "ADR-007 Advisory mode by default, auto-approve only when code can vouch"
+      ],
+      "rank": {
+        "hybrid": 2,
+        "managed KB": 3
+      },
+      "top": [
+        "2026-10-12 Review process check-in",
+        "Branches, commits and PR titles",
+        "ADR-007 Advisory mode by default, auto-approve only when code can vouch",
+        "Code review rules",
+        "ADR-008 Claude Haiku 4.5 through the Australian inference profile"
+      ],
+      "ms": 500
+    },
+    {
+      "id": "q13",
+      "by": "claude",
+      "kind": "paraphrase",
+      "question": "How do I put the reviewer back into the mode where it only labels PRs and never approves them?",
+      "pages": [
+        "Review a PR again or change the review level",
+        "ADR-007 Advisory mode by default, auto-approve only when code can vouch"
+      ],
+      "rank": {
+        "hybrid": 1,
+        "managed KB": 1
+      },
+      "top": [
+        "ADR-007 Advisory mode by default, auto-approve only when code can vouch",
+        "Turn AI reviews back on after a budget stop",
+        "2026-10-12 Review process check-in",
+        "Glossary",
+        "Review a PR again or change the review level"
+      ],
+      "ms": 745
+    },
+    {
+      "id": "q14",
+      "by": "claude",
+      "kind": "paraphrase",
+      "question": "A review ran while the model was down. How can I have the same commit reviewed again without pushing anything?",
+      "pages": [
+        "Review a PR again or change the review level"
+      ],
+      "rank": {
+        "hybrid": 1,
+        "managed KB": 1
+      },
+      "top": [
+        "Review a PR again or change the review level",
+        "Review a PR again or change the review level",
+        "2026-10-12 Review process check-in",
+        "Turn AI reviews back on after a budget stop",
+        "Code review rules"
+      ],
+      "ms": 613
+    },
+    {
+      "id": "q15",
+      "by": "claude",
+      "kind": "paraphrase",
+      "question": "What removes a ticket's test environment if its PR is just left open?",
+      "pages": [
+        "Clean up a stuck preview",
+        "ADR-004 Previews per ticket, not per PR",
+        "Architecture overview"
+      ],
+      "rank": {
+        "hybrid": 1,
+        "managed KB": 1
+      },
+      "top": [
+        "ADR-004 Previews per ticket, not per PR",
+        "Environments and resource names",
+        "Clean up a stuck preview",
+        "Glossary",
+        "Start here"
+      ],
+      "ms": 582
+    },
+    {
+      "id": "q16",
+      "by": "claude",
+      "kind": "paraphrase",
+      "question": "The dev deploy failed because CloudFormation was not allowed to create a new kind of resource. What is usually wrong, and where is it fixed?",
+      "pages": [
+        "Deploy to dev"
+      ],
+      "rank": {
+        "hybrid": 1,
+        "managed KB": 1
+      },
+      "top": [
+        "Deploy to dev",
+        "Deploy to dev",
+        "Clean up a stuck preview",
+        "Roll back a bad deploy on dev",
+        "Clean up a stuck preview"
+      ],
+      "ms": 459
+    },
+    {
+      "id": "q17",
+      "by": "claude",
+      "kind": "paraphrase",
+      "question": "Why does a web preview live in a folder of a shared bucket instead of getting its own distribution?",
+      "pages": [
+        "ADR-004 Previews per ticket, not per PR"
+      ],
+      "rank": {
+        "hybrid": 1,
+        "managed KB": 1
+      },
+      "top": [
+        "ADR-004 Previews per ticket, not per PR",
+        "Clean up a stuck preview",
+        "Environments and resource names",
+        "ADR-004 Previews per ticket, not per PR",
+        "Environments and resource names"
+      ],
+      "ms": 696
+    },
+    {
+      "id": "q18",
+      "by": "claude",
+      "kind": "paraphrase",
+      "question": "Which changes in a PR always go to a person, whatever the bot thinks?",
+      "pages": [
+        "Code review rules"
+      ],
+      "rank": {
+        "hybrid": 1,
+        "managed KB": 5
+      },
+      "top": [
+        "Working with AI coding agents",
+        "Writing the expected behavior block",
+        "ADR-008 Claude Haiku 4.5 through the Australian inference profile",
+        "2026-10-12 Review process check-in",
+        "Code review rules"
+      ],
+      "ms": 441
+    },
+    {
+      "id": "q19",
+      "by": "claude",
+      "kind": "paraphrase",
+      "question": "When does the summary of the overnight reviews come out?",
+      "pages": [
+        "Architecture overview",
+        "Glossary"
+      ],
+      "rank": {
+        "hybrid": 1,
+        "managed KB": 1
+      },
+      "top": [
+        "Glossary",
+        "Architecture overview",
+        "2026-10-12 Review process check-in",
+        "ADR-007 Advisory mode by default, auto-approve only when code can vouch",
+        "Review a PR again or change the review level"
+      ],
+      "ms": 589
+    },
+    {
+      "id": "q20",
+      "by": "claude",
+      "kind": "exact",
+      "question": "What was INV-124?",
+      "pages": [
+        "ADR-005 Return stock and derive sold_out"
+      ],
+      "rank": {
+        "hybrid": 1,
+        "managed KB": 1
+      },
+      "top": [
+        "ADR-005 Return stock and derive sold_out",
+        "Roll back a bad deploy on dev",
+        "2026-10-12 Review process check-in",
+        "Environments and resource names",
+        "ADR-004 Previews per ticket, not per PR"
+      ],
+      "ms": 988
+    },
+    {
+      "id": "q21",
+      "by": "claude",
+      "kind": "exact",
+      "question": "What is invalid_cursor, and can a client get it today?",
+      "pages": [
+        "Error codes",
+        "ADR-006 Cursor pagination for the item list"
+      ],
+      "rank": {
+        "hybrid": 1,
+        "managed KB": 1
+      },
+      "top": [
+        "ADR-006 Cursor pagination for the item list",
+        "Error codes",
+        "ADR-006 Cursor pagination for the item list",
+        "ADR-006 Cursor pagination for the item list",
+        "ADR-003 Error response format"
+      ],
+      "ms": 617
+    },
+    {
+      "id": "q22",
+      "by": "claude",
+      "kind": "exact",
+      "question": "What is stored in /pr-triage/config/limits?",
+      "pages": [
+        "Environments and resource names",
+        "Turn AI reviews back on after a budget stop"
+      ],
+      "rank": {
+        "hybrid": 1,
+        "managed KB": 1
+      },
+      "top": [
+        "Environments and resource names",
+        "Turn AI reviews back on after a budget stop",
+        "Review a PR again or change the review level",
+        "Branches, commits and PR titles",
+        "ADR-007 Advisory mode by default, auto-approve only when code can vouch"
+      ],
+      "ms": 617
+    },
+    {
+      "id": "q23",
+      "by": "claude",
+      "kind": "exact",
+      "question": "At what log level is a 404 response written?",
+      "pages": [
+        "Find the logs for a request"
+      ],
+      "rank": {
+        "hybrid": 1,
+        "managed KB": 1
+      },
+      "top": [
+        "Find the logs for a request",
+        "Find the logs for a request",
+        "Find the logs for a request",
+        "Find the logs for a request",
+        "Find the logs for a request"
+      ],
+      "ms": 1465
+    },
+    {
+      "id": "q24",
+      "by": "claude",
+      "kind": "multi",
+      "question": "Do the item endpoints return the stock quantity? I remember a decision that said they don't.",
+      "pages": [
+        "ADR-005 Return stock and derive sold_out",
+        "ADR-002 Keep stock out of item responses"
+      ],
+      "rank": {
+        "hybrid": 1,
+        "managed KB": 1
+      },
+      "top": [
+        "ADR-002 Keep stock out of item responses",
+        "ADR-005 Return stock and derive sold_out",
+        "ADR-005 Return stock and derive sold_out",
+        "ADR-005 Return stock and derive sold_out",
+        "Item API"
+      ],
+      "ms": 610
+    },
+    {
+      "id": "q25",
+      "by": "claude",
+      "kind": "multi",
+      "question": "Why did the team let the bot approve PRs, and how did the first try go?",
+      "pages": [
+        "ADR-007 Advisory mode by default, auto-approve only when code can vouch",
+        "2026-10-12 Review process check-in"
+      ],
+      "rank": {
+        "hybrid": 1,
+        "managed KB": 1
+      },
+      "top": [
+        "2026-10-12 Review process check-in",
+        "Glossary",
+        "ADR-007 Advisory mode by default, auto-approve only when code can vouch",
+        "Turn AI reviews back on after a budget stop",
+        "Code review rules"
+      ],
+      "ms": 559
+    },
+    {
+      "id": "q26",
+      "by": "claude",
+      "kind": "multi",
+      "question": "Before I open my first PR, what has to be in the branch name and in the PR description?",
+      "pages": [
+        "Branches, commits and PR titles",
+        "Writing the expected behavior block"
+      ],
+      "rank": {
+        "hybrid": 1,
+        "managed KB": 1
+      },
+      "top": [
+        "Branches, commits and PR titles",
+        "Branches, commits and PR titles",
+        "Start here",
+        "Glossary",
+        "Working with AI coding agents"
+      ],
+      "ms": 534
+    },
+    {
+      "id": "q30",
+      "by": "claude-low-overlap",
+      "kind": "paraphrase",
+      "question": "Our coding bots keep tripping the same automated gate on different PRs. Do we patch up each one, or is there a better place to deal with it?",
+      "pages": [
+        "Working with AI coding agents"
+      ],
+      "rank": {
+        "hybrid": 1,
+        "managed KB": 1
+      },
+      "top": [
+        "Working with AI coding agents",
+        "Branches, commits and PR titles",
+        "Code review rules",
+        "ADR-007 Advisory mode by default, auto-approve only when code can vouch",
+        "2026-10-12 Review process check-in"
+      ],
+      "ms": 429
+    },
+    {
+      "id": "q31",
+      "by": "claude-low-overlap",
+      "kind": "paraphrase",
+      "question": "I'm new and want to poke at the backend on my laptop without touching the cloud. What do I need running?",
+      "pages": [
+        "Start here"
+      ],
+      "rank": {
+        "hybrid": 1,
+        "managed KB": 2
+      },
+      "top": [
+        "Deploy to dev",
+        "Start here",
+        "Clean up a stuck preview",
+        "Architecture overview",
+        "Start here"
+      ],
+      "ms": 642
+    },
+    {
+      "id": "q32",
+      "by": "claude-low-overlap",
+      "kind": "paraphrase",
+      "question": "What happens to an earlier thumbs-up when the author adds more work to the same pull request?",
+      "pages": [
+        "Code review rules"
+      ],
+      "rank": {
+        "hybrid": 1,
+        "managed KB": 1
+      },
+      "top": [
+        "Code review rules",
+        "Code review rules",
+        "Glossary",
+        "Inventory Team",
+        "ADR-006 Cursor pagination for the item list"
+      ],
+      "ms": 699
+    },
+    {
+      "id": "q33",
+      "by": "claude-low-overlap",
+      "kind": "paraphrase",
+      "question": "What catches a PR write-up that tries to sweet-talk the bot into saying yes?",
+      "pages": [
+        "Glossary",
+        "Code review rules",
+        "2026-10-12 Review process check-in"
+      ],
+      "rank": {
+        "hybrid": 2,
+        "managed KB": 1
+      },
+      "top": [
+        "2026-10-12 Review process check-in",
+        "Branches, commits and PR titles",
+        "Working with AI coding agents",
+        "Review a PR again or change the review level",
+        "ADR-007 Advisory mode by default, auto-approve only when code can vouch"
+      ],
+      "ms": 789
+    },
+    {
+      "id": "q34",
+      "by": "claude-low-overlap",
+      "kind": "paraphrase",
+      "question": "Is there a live, customer-facing setup anywhere, or only places for trying things out?",
+      "pages": [
+        "Environments and resource names",
+        "Inventory Team",
+        "Deploy to dev"
+      ],
+      "rank": {
+        "hybrid": 5,
+        "managed KB": 2
+      },
+      "top": [
+        "Start here",
+        "Environments and resource names",
+        "Environments and resource names",
+        "Inventory Team",
+        "ADR-005 Return stock and derive sold_out"
+      ],
+      "ms": 648
+    }
+  ]
+}

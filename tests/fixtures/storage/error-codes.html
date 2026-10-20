@@ -1,0 +1,84 @@
+<p>Error responses look like <code>{&quot;error&quot;: &quot;&lt;code&gt;&quot;, &quot;detail&quot;: &quot;&lt;text&gt;&quot;}</code> (<ac:link><ri:page ri:content-title="ADR-003 Error response format" ri:version-at-save="1" /><ac:plain-text-link-body><![CDATA[ADR-003 Error response format]]></ac:plain-text-link-body></ac:link>). Branch on <code>error</code>, and show <code>detail</code> to people only.</p>
+<table><tbody>
+<tr>
+<th>Code</th>
+<th>Status</th>
+<th>When</th>
+<th>Example <code>detail</code></th>
+</tr>
+<tr>
+<td><code>invalid_json</code></td>
+<td>400</td>
+<td>The body of <code>POST /items</code> is not valid JSON</td>
+<td><code>body is not valid JSON: Expecting value: line 1 column 1 (char 0)</code></td>
+</tr>
+<tr>
+<td><code>invalid_item</code></td>
+<td>400</td>
+<td>The body is JSON, but not a valid new item</td>
+<td><code>price must be between 0 and 1000000</code></td>
+</tr>
+<tr>
+<td><code>not_found</code></td>
+<td>404</td>
+<td>No route for the path, or no item with that id</td>
+<td>none</td>
+</tr>
+<tr>
+<td><code>method_not_allowed</code></td>
+<td>405</td>
+<td>The path exists, but not with this method, for example <code>DELETE /items/42</code></td>
+<td>none</td>
+</tr>
+<tr>
+<td><code>conflict</code></td>
+<td>409</td>
+<td><code>POST /items</code> with an id that already exists</td>
+<td><code>item 42 already exists</code></td>
+</tr>
+<tr>
+<td><code>internal_error</code></td>
+<td>500</td>
+<td>Anything unexpected. The log has <code>unhandled error: &lt;ExceptionType&gt;</code></td>
+<td>none</td>
+</tr>
+</tbody></table>
+<h2>invalid_item details</h2>
+<table><tbody>
+<tr>
+<th>Detail</th>
+<th>Cause</th>
+</tr>
+<tr>
+<td><code>body must be a JSON object</code></td>
+<td>The body is a list, a string or a number</td>
+</tr>
+<tr>
+<td><code>unknown field: &lt;names&gt;</code></td>
+<td>Fields other than <code>id</code>, <code>name</code> and <code>price</code>, for example <code>stock</code></td>
+</tr>
+<tr>
+<td><code>id must be 1-64 letters, digits, '-' or '_'</code></td>
+<td>Missing or malformed id</td>
+</tr>
+<tr>
+<td><code>name is required</code></td>
+<td>Missing or blank name</td>
+</tr>
+<tr>
+<td><code>name must be at most 100 characters</code></td>
+<td>Name too long</td>
+</tr>
+<tr>
+<td><code>price must be a number</code></td>
+<td>Missing price, or a boolean or text</td>
+</tr>
+<tr>
+<td><code>price must be between 0 and 1000000</code></td>
+<td>Price below 0 or above 1,000,000</td>
+</tr>
+</tbody></table>
+<ac:structured-macro ac:name="note" ac:schema-version="1" ac:macro-id="b3cc1029-2947-41dd-aa69-3b8e43c59f22"><ac:rich-text-body>
+<p><code>GET /items/{id}</code> with an id that does not match the id format returns <code>404 not_found</code>, not <code>400</code>: the client asked for something that cannot exist.</p>
+</ac:rich-text-body></ac:structured-macro>
+<p><ac:link><ri:page ri:content-title="ADR-006 Cursor pagination for the item list" ri:version-at-save="1" /><ac:plain-text-link-body><![CDATA[ADR-006 Cursor pagination for the item list]]></ac:plain-text-link-body></ac:link> proposes one more code, <code>invalid_cursor</code> (400). It does not exist yet.</p>

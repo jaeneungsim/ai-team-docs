@@ -1,0 +1,1540 @@
+{
+  "run_at": "2026-10-19T04:52:19+00:00",
+  "index": {
+    "build": "20261019T045201Z-69e4b3",
+    "pages": 30,
+    "chunks": 61
+  },
+  "top_k": 5,
+  "embedding_tokens": 10875,
+  "summary": {
+    "all": {
+      "questions": 31,
+      "keyword": {
+        "hit@5": 0.8387096774193549,
+        "mrr": 0.6801075268817204
+      },
+      "vector": {
+        "hit@5": 1.0,
+        "mrr": 0.8629032258064516
+      },
+      "hybrid": {
+        "hit@5": 1.0,
+        "mrr": 0.885483870967742
+      },
+      "hybrid, no prefix": {
+        "hit@5": 0.967741935483871,
+        "mrr": 0.8182795698924731
+      }
+    },
+    "kind: paraphrase": {
+      "questions": 24,
+      "keyword": {
+        "hit@5": 0.7916666666666666,
+        "mrr": 0.6284722222222222
+      },
+      "vector": {
+        "hit@5": 1.0,
+        "mrr": 0.8715277777777778
+      },
+      "hybrid": {
+        "hit@5": 1.0,
+        "mrr": 0.8520833333333333
+      },
+      "hybrid, no prefix": {
+        "hit@5": 0.9583333333333334,
+        "mrr": 0.8069444444444445
+      }
+    },
+    "by: claude": {
+      "questions": 26,
+      "keyword": {
+        "hit@5": 0.8846153846153846,
+        "mrr": 0.7147435897435896
+      },
+      "vector": {
+        "hit@5": 1.0,
+        "mrr": 0.8878205128205128
+      },
+      "hybrid": {
+        "hit@5": 1.0,
+        "mrr": 0.9134615384615384
+      },
+      "hybrid, no prefix": {
+        "hit@5": 1.0,
+        "mrr": 0.841025641025641
+      }
+    },
+    "kind: exact": {
+      "questions": 4,
+      "keyword": {
+        "hit@5": 1.0,
+        "mrr": 0.875
+      },
+      "vector": {
+        "hit@5": 1.0,
+        "mrr": 0.8333333333333334
+      },
+      "hybrid": {
+        "hit@5": 1.0,
+        "mrr": 1.0
+      },
+      "hybrid, no prefix": {
+        "hit@5": 1.0,
+        "mrr": 0.875
+      }
+    },
+    "kind: multi": {
+      "questions": 3,
+      "keyword": {
+        "hit@5": 1.0,
+        "mrr": 0.8333333333333334
+      },
+      "vector": {
+        "hit@5": 1.0,
+        "mrr": 0.8333333333333334
+      },
+      "hybrid": {
+        "hit@5": 1.0,
+        "mrr": 1.0
+      },
+      "hybrid, no prefix": {
+        "hit@5": 1.0,
+        "mrr": 0.8333333333333334
+      }
+    },
+    "by: claude-low-overlap": {
+      "questions": 5,
+      "keyword": {
+        "hit@5": 0.6,
+        "mrr": 0.5
+      },
+      "vector": {
+        "hit@5": 1.0,
+        "mrr": 0.7333333333333333
+      },
+      "hybrid": {
+        "hit@5": 1.0,
+        "mrr": 0.74
+      },
+      "hybrid, no prefix": {
+        "hit@5": 0.8,
+        "mrr": 0.7
+      }
+    }
+  },
+  "questions": [
+    {
+      "id": "q01",
+      "by": "claude",
+      "kind": "paraphrase",
+      "question": "dev broke right after something got merged. What is the quickest way to get the previous working version running again?",
+      "pages": [
+        "Roll back a bad deploy on dev"
+      ],
+      "rank": {
+        "keyword": 4,
+        "vector": 1,
+        "hybrid": 1,
+        "hybrid, no prefix": 1
+      },
+      "top": {
+        "keyword": [
+          "Review a PR again or change the review level",
+          "Start here",
+          "Writing the expected behavior block",
+          "Roll back a bad deploy on dev",
+          "Inventory Team"
+        ],
+        "vector": [
+          "Roll back a bad deploy on dev",
+          "Roll back a bad deploy on dev",
+          "Deploy to dev",
+          "Deploy to dev",
+          "Writing the expected behavior block"
+        ],
+        "hybrid": [
+          "Roll back a bad deploy on dev",
+          "Review a PR again or change the review level",
+          "Writing the expected behavior block",
+          "Deploy to dev",
+          "Roll back a bad deploy on dev"
+        ],
+        "hybrid, no prefix": [
+          "Roll back a bad deploy on dev",
+          "Review a PR again or change the review level",
+          "Deploy to dev",
+          "Writing the expected behavior block",
+          "Roll back a bad deploy on dev"
+        ]
+      }
+    },
+    {
+      "id": "q02",
+      "by": "claude",
+      "kind": "paraphrase",
+      "question": "If I redeploy an older commit to fix dev, is that the end of it, or is there something else I have to do?",
+      "pages": [
+        "Roll back a bad deploy on dev"
+      ],
+      "rank": {
+        "keyword": 1,
+        "vector": 1,
+        "hybrid": 1,
+        "hybrid, no prefix": 2
+      },
+      "top": {
+        "keyword": [
+          "Roll back a bad deploy on dev",
+          "Decisions",
+          "Code review rules",
+          "Deploy to dev",
+          "Code review rules"
+        ],
+        "vector": [
+          "Roll back a bad deploy on dev",
+          "Roll back a bad deploy on dev",
+          "Deploy to dev",
+          "Deploy to dev",
+          "Review a PR again or change the review level"
+        ],
+        "hybrid": [
+          "Roll back a bad deploy on dev",
+          "Deploy to dev",
+          "Roll back a bad deploy on dev",
+          "Code review rules",
+          "Code review rules"
+        ],
+        "hybrid, no prefix": [
+          "Deploy to dev",
+          "Roll back a bad deploy on dev",
+          "Roll back a bad deploy on dev",
+          "Code review rules",
+          "Code review rules"
+        ]
+      }
+    },
+    {
+      "id": "q03",
+      "by": "claude",
+      "kind": "paraphrase",
+      "question": "The AI code review stopped running and every PR now waits for a human. How do I get the reviews going again?",
+      "pages": [
+        "Turn AI reviews back on after a budget stop"
+      ],
+      "rank": {
+        "keyword": 1,
+        "vector": 1,
+        "hybrid": 1,
+        "hybrid, no prefix": 1
+      },
+      "top": {
+        "keyword": [
+          "Turn AI reviews back on after a budget stop",
+          "Turn AI reviews back on after a budget stop",
+          "ADR-007 Advisory mode by default, auto-approve only when code can vouch",
+          "2026-10-12 Review process check-in",
+          "Working with AI coding agents"
+        ],
+        "vector": [
+          "Turn AI reviews back on after a budget stop",
+          "Turn AI reviews back on after a budget stop",
+          "Review a PR again or change the review level",
+          "2026-10-12 Review process check-in",
+          "Working with AI coding agents"
+        ],
+        "hybrid": [
+          "Turn AI reviews back on after a budget stop",
+          "Turn AI reviews back on after a budget stop",
+          "2026-10-12 Review process check-in",
+          "ADR-007 Advisory mode by default, auto-approve only when code can vouch",
+          "Review a PR again or change the review level"
+        ],
+        "hybrid, no prefix": [
+          "Turn AI reviews back on after a budget stop",
+          "ADR-007 Advisory mode by default, auto-approve only when code can vouch",
+          "2026-10-12 Review process check-in",
+          "Turn AI reviews back on after a budget stop",
+          "Code review rules"
+        ]
+      }
+    },
+    {
+      "id": "q04",
+      "by": "claude",
+      "kind": "paraphrase",
+      "question": "Someone sent me the id of a request that failed. Where can I see what the API did with it?",
+      "pages": [
+        "Find the logs for a request"
+      ],
+      "rank": {
+        "keyword": 1,
+        "vector": 1,
+        "hybrid": 1,
+        "hybrid, no prefix": 1
+      },
+      "top": {
+        "keyword": [
+          "Find the logs for a request",
+          "Working with AI coding agents",
+          "Item API",
+          "Find the logs for a request",
+          "Clean up a stuck preview"
+        ],
+        "vector": [
+          "Find the logs for a request",
+          "Find the logs for a request",
+          "Error codes",
+          "ADR-003 Error response format",
+          "Error codes"
+        ],
+        "hybrid": [
+          "Find the logs for a request",
+          "Find the logs for a request",
+          "Item API",
+          "Working with AI coding agents",
+          "Start here"
+        ],
+        "hybrid, no prefix": [
+          "Find the logs for a request",
+          "Find the logs for a request",
+          "Item API",
+          "Start here",
+          "Writing the expected behavior block"
+        ]
+      }
+    },
+    {
+      "id": "q05",
+      "by": "claude",
+      "kind": "paraphrase",
+      "question": "Why does an item come back with a yes/no flag for whether it can be bought, instead of clients working that out from the quantity?",
+      "pages": [
+        "ADR-005 Return stock and derive sold_out"
+      ],
+      "rank": {
+        "keyword": 3,
+        "vector": 1,
+        "hybrid": 2,
+        "hybrid, no prefix": 1
+      },
+      "top": {
+        "keyword": [
+          "ADR-002 Keep stock out of item responses",
+          "ADR-006 Cursor pagination for the item list",
+          "ADR-005 Return stock and derive sold_out",
+          "Roll back a bad deploy on dev",
+          "Decisions"
+        ],
+        "vector": [
+          "ADR-005 Return stock and derive sold_out",
+          "ADR-002 Keep stock out of item responses",
+          "ADR-005 Return stock and derive sold_out",
+          "Item API",
+          "ADR-006 Cursor pagination for the item list"
+        ],
+        "hybrid": [
+          "ADR-002 Keep stock out of item responses",
+          "ADR-005 Return stock and derive sold_out",
+          "ADR-006 Cursor pagination for the item list",
+          "Decisions",
+          "Roll back a bad deploy on dev"
+        ],
+        "hybrid, no prefix": [
+          "ADR-005 Return stock and derive sold_out",
+          "ADR-006 Cursor pagination for the item list",
+          "ADR-002 Keep stock out of item responses",
+          "Roll back a bad deploy on dev",
+          "Item API"
+        ]
+      }
+    },
+    {
+      "id": "q06",
+      "by": "claude",
+      "kind": "paraphrase",
+      "question": "Why is every endpoint handled by a single function rather than one function per endpoint?",
+      "pages": [
+        "ADR-001 One Lambda function behind the HTTP API"
+      ],
+      "rank": {
+        "keyword": 2,
+        "vector": 1,
+        "hybrid": 1,
+        "hybrid, no prefix": 1
+      },
+      "top": {
+        "keyword": [
+          "ADR-004 Previews per ticket, not per PR",
+          "ADR-001 One Lambda function behind the HTTP API",
+          "Architecture overview",
+          "Architecture overview",
+          "Branches, commits and PR titles"
+        ],
+        "vector": [
+          "ADR-001 One Lambda function behind the HTTP API",
+          "Architecture overview",
+          "ADR-004 Previews per ticket, not per PR",
+          "ADR-004 Previews per ticket, not per PR",
+          "Writing the expected behavior block"
+        ],
+        "hybrid": [
+          "ADR-001 One Lambda function behind the HTTP API",
+          "ADR-004 Previews per ticket, not per PR",
+          "Architecture overview",
+          "Architecture overview",
+          "ADR-004 Previews per ticket, not per PR"
+        ],
+        "hybrid, no prefix": [
+          "ADR-001 One Lambda function behind the HTTP API",
+          "ADR-004 Previews per ticket, not per PR",
+          "Architecture overview",
+          "Architecture overview",
+          "ADR-006 Cursor pagination for the item list"
+        ]
+      }
+    },
+    {
+      "id": "q07",
+      "by": "claude",
+      "kind": "paraphrase",
+      "question": "When I create a new item through the API, how many units does it have, and will the shop show it as available?",
+      "pages": [
+        "ADR-005 Return stock and derive sold_out",
+        "Item API"
+      ],
+      "rank": {
+        "keyword": 2,
+        "vector": 1,
+        "hybrid": 1,
+        "hybrid, no prefix": 1
+      },
+      "top": {
+        "keyword": [
+          "Architecture overview",
+          "ADR-005 Return stock and derive sold_out",
+          "ADR-005 Return stock and derive sold_out",
+          "Clean up a stuck preview",
+          "ADR-008 Claude Haiku 4.5 through the Australian inference profile"
+        ],
+        "vector": [
+          "Item API",
+          "ADR-005 Return stock and derive sold_out",
+          "Item API",
+          "ADR-002 Keep stock out of item responses",
+          "ADR-005 Return stock and derive sold_out"
+        ],
+        "hybrid": [
+          "ADR-005 Return stock and derive sold_out",
+          "ADR-005 Return stock and derive sold_out",
+          "Item API",
+          "ADR-002 Keep stock out of item responses",
+          "Item API"
+        ],
+        "hybrid, no prefix": [
+          "ADR-005 Return stock and derive sold_out",
+          "ADR-005 Return stock and derive sold_out",
+          "Item API",
+          "ADR-002 Keep stock out of item responses",
+          "ADR-001 One Lambda function behind the HTTP API"
+        ]
+      }
+    },
+    {
+      "id": "q08",
+      "by": "claude",
+      "kind": "paraphrase",
+      "question": "Can a client set how many units are on hand when it creates an item?",
+      "pages": [
+        "Item API",
+        "Error codes"
+      ],
+      "rank": {
+        "keyword": null,
+        "vector": 4,
+        "hybrid": 4,
+        "hybrid, no prefix": 5
+      },
+      "top": {
+        "keyword": [
+          "ADR-006 Cursor pagination for the item list",
+          "Turn AI reviews back on after a budget stop",
+          "ADR-005 Return stock and derive sold_out",
+          "ADR-003 Error response format",
+          "ADR-007 Advisory mode by default, auto-approve only when code can vouch"
+        ],
+        "vector": [
+          "ADR-005 Return stock and derive sold_out",
+          "ADR-002 Keep stock out of item responses",
+          "ADR-005 Return stock and derive sold_out",
+          "Item API",
+          "Inventory Team"
+        ],
+        "hybrid": [
+          "ADR-005 Return stock and derive sold_out",
+          "ADR-006 Cursor pagination for the item list",
+          "ADR-005 Return stock and derive sold_out",
+          "Item API",
+          "ADR-003 Error response format"
+        ],
+        "hybrid, no prefix": [
+          "ADR-005 Return stock and derive sold_out",
+          "ADR-006 Cursor pagination for the item list",
+          "ADR-005 Return stock and derive sold_out",
+          "ADR-003 Error response format",
+          "Item API"
+        ]
+      }
+    },
+    {
+      "id": "q09",
+      "by": "claude",
+      "kind": "paraphrase",
+      "question": "What happens if someone sends a DELETE request for an item?",
+      "pages": [
+        "Error codes",
+        "Item API",
+        "ADR-001 One Lambda function behind the HTTP API"
+      ],
+      "rank": {
+        "keyword": null,
+        "vector": 1,
+        "hybrid": 2,
+        "hybrid, no prefix": 2
+      },
+      "top": {
+        "keyword": [
+          "Code review rules",
+          "Clean up a stuck preview",
+          "Clean up a stuck preview",
+          "ADR-006 Cursor pagination for the item list",
+          "Turn AI reviews back on after a budget stop"
+        ],
+        "vector": [
+          "Error codes",
+          "ADR-006 Cursor pagination for the item list",
+          "Item API",
+          "Item API",
+          "ADR-005 Return stock and derive sold_out"
+        ],
+        "hybrid": [
+          "ADR-006 Cursor pagination for the item list",
+          "Error codes",
+          "Find the logs for a request",
+          "Item API",
+          "Item API"
+        ],
+        "hybrid, no prefix": [
+          "ADR-006 Cursor pagination for the item list",
+          "Error codes",
+          "Clean up a stuck preview",
+          "Find the logs for a request",
+          "Clean up a stuck preview"
+        ]
+      }
+    },
+    {
+      "id": "q10",
+      "by": "claude",
+      "kind": "paraphrase",
+      "question": "If I fetch an item with an id full of odd characters, do I get a bad request error?",
+      "pages": [
+        "Error codes"
+      ],
+      "rank": {
+        "keyword": 1,
+        "vector": 1,
+        "hybrid": 1,
+        "hybrid, no prefix": 1
+      },
+      "top": {
+        "keyword": [
+          "Error codes",
+          "Find the logs for a request",
+          "Roll back a bad deploy on dev",
+          "Roll back a bad deploy on dev",
+          "ADR-001 One Lambda function behind the HTTP API"
+        ],
+        "vector": [
+          "Error codes",
+          "ADR-006 Cursor pagination for the item list",
+          "Error codes",
+          "Item API",
+          "ADR-003 Error response format"
+        ],
+        "hybrid": [
+          "Error codes",
+          "Find the logs for a request",
+          "Item API",
+          "Error codes",
+          "ADR-003 Error response format"
+        ],
+        "hybrid, no prefix": [
+          "Error codes",
+          "Item API",
+          "Find the logs for a request",
+          "ADR-003 Error response format",
+          "Item API"
+        ]
+      }
+    },
+    {
+      "id": "q11",
+      "by": "claude",
+      "kind": "paraphrase",
+      "question": "Which model reads our pull requests, and roughly how much does one review cost?",
+      "pages": [
+        "ADR-008 Claude Haiku 4.5 through the Australian inference profile"
+      ],
+      "rank": {
+        "keyword": 1,
+        "vector": 1,
+        "hybrid": 1,
+        "hybrid, no prefix": 1
+      },
+      "top": {
+        "keyword": [
+          "ADR-008 Claude Haiku 4.5 through the Australian inference profile",
+          "ADR-006 Cursor pagination for the item list",
+          "ADR-001 One Lambda function behind the HTTP API",
+          "Inventory Team",
+          "Roll back a bad deploy on dev"
+        ],
+        "vector": [
+          "ADR-008 Claude Haiku 4.5 through the Australian inference profile",
+          "Architecture overview",
+          "Inventory Team",
+          "Review a PR again or change the review level",
+          "Turn AI reviews back on after a budget stop"
+        ],
+        "hybrid": [
+          "ADR-008 Claude Haiku 4.5 through the Australian inference profile",
+          "Inventory Team",
+          "Architecture overview",
+          "Start here",
+          "Review a PR again or change the review level"
+        ],
+        "hybrid, no prefix": [
+          "ADR-008 Claude Haiku 4.5 through the Australian inference profile",
+          "Inventory Team",
+          "Start here",
+          "Architecture overview",
+          "Review a PR again or change the review level"
+        ]
+      }
+    },
+    {
+      "id": "q12",
+      "by": "claude",
+      "kind": "paraphrase",
+      "question": "When is the review bot allowed to merge a PR without a person?",
+      "pages": [
+        "ADR-007 Advisory mode by default, auto-approve only when code can vouch"
+      ],
+      "rank": {
+        "keyword": null,
+        "vector": 1,
+        "hybrid": 2,
+        "hybrid, no prefix": 3
+      },
+      "top": {
+        "keyword": [
+          "2026-10-12 Review process check-in",
+          "Branches, commits and PR titles",
+          "Code review rules",
+          "Roll back a bad deploy on dev",
+          "ADR-008 Claude Haiku 4.5 through the Australian inference profile"
+        ],
+        "vector": [
+          "ADR-007 Advisory mode by default, auto-approve only when code can vouch",
+          "Code review rules",
+          "Working with AI coding agents",
+          "Code review rules",
+          "2026-10-12 Review process check-in"
+        ],
+        "hybrid": [
+          "2026-10-12 Review process check-in",
+          "ADR-007 Advisory mode by default, auto-approve only when code can vouch",
+          "Code review rules",
+          "Code review rules",
+          "Writing the expected behavior block"
+        ],
+        "hybrid, no prefix": [
+          "2026-10-12 Review process check-in",
+          "Code review rules",
+          "ADR-007 Advisory mode by default, auto-approve only when code can vouch",
+          "Writing the expected behavior block",
+          "Branches, commits and PR titles"
+        ]
+      }
+    },
+    {
+      "id": "q13",
+      "by": "claude",
+      "kind": "paraphrase",
+      "question": "How do I put the reviewer back into the mode where it only labels PRs and never approves them?",
+      "pages": [
+        "Review a PR again or change the review level",
+        "ADR-007 Advisory mode by default, auto-approve only when code can vouch"
+      ],
+      "rank": {
+        "keyword": 1,
+        "vector": 1,
+        "hybrid": 1,
+        "hybrid, no prefix": 1
+      },
+      "top": {
+        "keyword": [
+          "ADR-007 Advisory mode by default, auto-approve only when code can vouch",
+          "2026-10-12 Review process check-in",
+          "Glossary",
+          "Review a PR again or change the review level",
+          "Turn AI reviews back on after a budget stop"
+        ],
+        "vector": [
+          "Review a PR again or change the review level",
+          "ADR-007 Advisory mode by default, auto-approve only when code can vouch",
+          "2026-10-12 Review process check-in",
+          "Turn AI reviews back on after a budget stop",
+          "Turn AI reviews back on after a budget stop"
+        ],
+        "hybrid": [
+          "ADR-007 Advisory mode by default, auto-approve only when code can vouch",
+          "Review a PR again or change the review level",
+          "2026-10-12 Review process check-in",
+          "Turn AI reviews back on after a budget stop",
+          "2026-10-12 Review process check-in"
+        ],
+        "hybrid, no prefix": [
+          "ADR-007 Advisory mode by default, auto-approve only when code can vouch",
+          "2026-10-12 Review process check-in",
+          "2026-10-12 Review process check-in",
+          "Code review rules",
+          "Turn AI reviews back on after a budget stop"
+        ]
+      }
+    },
+    {
+      "id": "q14",
+      "by": "claude",
+      "kind": "paraphrase",
+      "question": "A review ran while the model was down. How can I have the same commit reviewed again without pushing anything?",
+      "pages": [
+        "Review a PR again or change the review level"
+      ],
+      "rank": {
+        "keyword": 2,
+        "vector": 1,
+        "hybrid": 1,
+        "hybrid, no prefix": 1
+      },
+      "top": {
+        "keyword": [
+          "Turn AI reviews back on after a budget stop",
+          "Review a PR again or change the review level",
+          "ADR-008 Claude Haiku 4.5 through the Australian inference profile",
+          "Code review rules",
+          "2026-10-12 Review process check-in"
+        ],
+        "vector": [
+          "Review a PR again or change the review level",
+          "Review a PR again or change the review level",
+          "2026-10-12 Review process check-in",
+          "Turn AI reviews back on after a budget stop",
+          "Turn AI reviews back on after a budget stop"
+        ],
+        "hybrid": [
+          "Review a PR again or change the review level",
+          "Turn AI reviews back on after a budget stop",
+          "2026-10-12 Review process check-in",
+          "2026-10-12 Review process check-in",
+          "Review a PR again or change the review level"
+        ],
+        "hybrid, no prefix": [
+          "Review a PR again or change the review level",
+          "Turn AI reviews back on after a budget stop",
+          "2026-10-12 Review process check-in",
+          "Code review rules",
+          "Roll back a bad deploy on dev"
+        ]
+      }
+    },
+    {
+      "id": "q15",
+      "by": "claude",
+      "kind": "paraphrase",
+      "question": "What removes a ticket's test environment if its PR is just left open?",
+      "pages": [
+        "Clean up a stuck preview",
+        "ADR-004 Previews per ticket, not per PR",
+        "Architecture overview"
+      ],
+      "rank": {
+        "keyword": 1,
+        "vector": 2,
+        "hybrid": 1,
+        "hybrid, no prefix": 1
+      },
+      "top": {
+        "keyword": [
+          "ADR-004 Previews per ticket, not per PR",
+          "Deploy to dev",
+          "Glossary",
+          "Environments and resource names",
+          "Clean up a stuck preview"
+        ],
+        "vector": [
+          "Environments and resource names",
+          "ADR-004 Previews per ticket, not per PR",
+          "Writing the expected behavior block",
+          "Review a PR again or change the review level",
+          "Code review rules"
+        ],
+        "hybrid": [
+          "ADR-004 Previews per ticket, not per PR",
+          "Environments and resource names",
+          "Code review rules",
+          "Review a PR again or change the review level",
+          "Writing the expected behavior block"
+        ],
+        "hybrid, no prefix": [
+          "ADR-004 Previews per ticket, not per PR",
+          "Code review rules",
+          "Environments and resource names",
+          "Start here",
+          "Review a PR again or change the review level"
+        ]
+      }
+    },
+    {
+      "id": "q16",
+      "by": "claude",
+      "kind": "paraphrase",
+      "question": "The dev deploy failed because CloudFormation was not allowed to create a new kind of resource. What is usually wrong, and where is it fixed?",
+      "pages": [
+        "Deploy to dev"
+      ],
+      "rank": {
+        "keyword": 1,
+        "vector": 1,
+        "hybrid": 1,
+        "hybrid, no prefix": 1
+      },
+      "top": {
+        "keyword": [
+          "Deploy to dev",
+          "Clean up a stuck preview",
+          "Clean up a stuck preview",
+          "Architecture overview",
+          "ADR-004 Previews per ticket, not per PR"
+        ],
+        "vector": [
+          "Deploy to dev",
+          "Deploy to dev",
+          "Clean up a stuck preview",
+          "Clean up a stuck preview",
+          "Roll back a bad deploy on dev"
+        ],
+        "hybrid": [
+          "Deploy to dev",
+          "Clean up a stuck preview",
+          "Clean up a stuck preview",
+          "Deploy to dev",
+          "Architecture overview"
+        ],
+        "hybrid, no prefix": [
+          "Deploy to dev",
+          "Clean up a stuck preview",
+          "Clean up a stuck preview",
+          "ADR-004 Previews per ticket, not per PR",
+          "Deploy to dev"
+        ]
+      }
+    },
+    {
+      "id": "q17",
+      "by": "claude",
+      "kind": "paraphrase",
+      "question": "Why does a web preview live in a folder of a shared bucket instead of getting its own distribution?",
+      "pages": [
+        "ADR-004 Previews per ticket, not per PR"
+      ],
+      "rank": {
+        "keyword": 1,
+        "vector": 1,
+        "hybrid": 1,
+        "hybrid, no prefix": 1
+      },
+      "top": {
+        "keyword": [
+          "ADR-004 Previews per ticket, not per PR",
+          "Architecture overview",
+          "ADR-004 Previews per ticket, not per PR",
+          "Environments and resource names",
+          "Deploy to dev"
+        ],
+        "vector": [
+          "ADR-004 Previews per ticket, not per PR",
+          "Environments and resource names",
+          "ADR-004 Previews per ticket, not per PR",
+          "Clean up a stuck preview",
+          "Environments and resource names"
+        ],
+        "hybrid": [
+          "ADR-004 Previews per ticket, not per PR",
+          "ADR-004 Previews per ticket, not per PR",
+          "Environments and resource names",
+          "Inventory Team",
+          "Architecture overview"
+        ],
+        "hybrid, no prefix": [
+          "ADR-004 Previews per ticket, not per PR",
+          "Environments and resource names",
+          "ADR-004 Previews per ticket, not per PR",
+          "Deploy to dev",
+          "Inventory Team"
+        ]
+      }
+    },
+    {
+      "id": "q18",
+      "by": "claude",
+      "kind": "paraphrase",
+      "question": "Which changes in a PR always go to a person, whatever the bot thinks?",
+      "pages": [
+        "Code review rules"
+      ],
+      "rank": {
+        "keyword": 2,
+        "vector": 1,
+        "hybrid": 1,
+        "hybrid, no prefix": 3
+      },
+      "top": {
+        "keyword": [
+          "Working with AI coding agents",
+          "Code review rules",
+          "2026-10-12 Review process check-in",
+          "ADR-007 Advisory mode by default, auto-approve only when code can vouch",
+          "ADR-008 Claude Haiku 4.5 through the Australian inference profile"
+        ],
+        "vector": [
+          "Code review rules",
+          "Working with AI coding agents",
+          "Working with AI coding agents",
+          "ADR-007 Advisory mode by default, auto-approve only when code can vouch",
+          "Code review rules"
+        ],
+        "hybrid": [
+          "Code review rules",
+          "Working with AI coding agents",
+          "ADR-007 Advisory mode by default, auto-approve only when code can vouch",
+          "Code review rules",
+          "Writing the expected behavior block"
+        ],
+        "hybrid, no prefix": [
+          "Working with AI coding agents",
+          "ADR-007 Advisory mode by default, auto-approve only when code can vouch",
+          "Code review rules",
+          "2026-10-12 Review process check-in",
+          "Writing the expected behavior block"
+        ]
+      }
+    },
+    {
+      "id": "q19",
+      "by": "claude",
+      "kind": "paraphrase",
+      "question": "When does the summary of the overnight reviews come out?",
+      "pages": [
+        "Architecture overview",
+        "Glossary"
+      ],
+      "rank": {
+        "keyword": 1,
+        "vector": 2,
+        "hybrid": 1,
+        "hybrid, no prefix": 1
+      },
+      "top": {
+        "keyword": [
+          "Architecture overview",
+          "Decisions",
+          "Glossary",
+          "Item API",
+          "2026-10-12 Review process check-in"
+        ],
+        "vector": [
+          "2026-10-12 Review process check-in",
+          "Architecture overview",
+          "Clean up a stuck preview",
+          "Review a PR again or change the review level",
+          "ADR-004 Previews per ticket, not per PR"
+        ],
+        "hybrid": [
+          "Architecture overview",
+          "2026-10-12 Review process check-in",
+          "2026-10-12 Review process check-in",
+          "Turn AI reviews back on after a budget stop",
+          "Review a PR again or change the review level"
+        ],
+        "hybrid, no prefix": [
+          "Architecture overview",
+          "2026-10-12 Review process check-in",
+          "ADR-007 Advisory mode by default, auto-approve only when code can vouch",
+          "Turn AI reviews back on after a budget stop",
+          "Review a PR again or change the review level"
+        ]
+      }
+    },
+    {
+      "id": "q20",
+      "by": "claude",
+      "kind": "exact",
+      "question": "What was INV-124?",
+      "pages": [
+        "ADR-005 Return stock and derive sold_out"
+      ],
+      "rank": {
+        "keyword": 2,
+        "vector": 3,
+        "hybrid": 1,
+        "hybrid, no prefix": 2
+      },
+      "top": {
+        "keyword": [
+          "Roll back a bad deploy on dev",
+          "ADR-005 Return stock and derive sold_out",
+          "2026-10-12 Review process check-in",
+          "Environments and resource names",
+          "Architecture overview"
+        ],
+        "vector": [
+          "Inventory Team",
+          "ADR-002 Keep stock out of item responses",
+          "ADR-005 Return stock and derive sold_out",
+          "Runbooks",
+          "Deploy to dev"
+        ],
+        "hybrid": [
+          "ADR-005 Return stock and derive sold_out",
+          "Roll back a bad deploy on dev",
+          "2026-10-12 Review process check-in",
+          "ADR-002 Keep stock out of item responses",
+          "Environments and resource names"
+        ],
+        "hybrid, no prefix": [
+          "Roll back a bad deploy on dev",
+          "ADR-005 Return stock and derive sold_out",
+          "ADR-006 Cursor pagination for the item list",
+          "2026-10-12 Review process check-in",
+          "Find the logs for a request"
+        ]
+      }
+    },
+    {
+      "id": "q21",
+      "by": "claude",
+      "kind": "exact",
+      "question": "What is invalid_cursor, and can a client get it today?",
+      "pages": [
+        "Error codes",
+        "ADR-006 Cursor pagination for the item list"
+      ],
+      "rank": {
+        "keyword": 1,
+        "vector": 1,
+        "hybrid": 1,
+        "hybrid, no prefix": 1
+      },
+      "top": {
+        "keyword": [
+          "ADR-006 Cursor pagination for the item list",
+          "Error codes",
+          "ADR-006 Cursor pagination for the item list",
+          "ADR-003 Error response format",
+          "2026-10-12 Review process check-in"
+        ],
+        "vector": [
+          "ADR-006 Cursor pagination for the item list",
+          "Error codes",
+          "ADR-006 Cursor pagination for the item list",
+          "Reference",
+          "Inventory Team"
+        ],
+        "hybrid": [
+          "ADR-006 Cursor pagination for the item list",
+          "Error codes",
+          "ADR-006 Cursor pagination for the item list",
+          "ADR-003 Error response format",
+          "2026-10-12 Review process check-in"
+        ],
+        "hybrid, no prefix": [
+          "ADR-006 Cursor pagination for the item list",
+          "Error codes",
+          "ADR-006 Cursor pagination for the item list",
+          "ADR-003 Error response format",
+          "2026-10-12 Review process check-in"
+        ]
+      }
+    },
+    {
+      "id": "q22",
+      "by": "claude",
+      "kind": "exact",
+      "question": "What is stored in /pr-triage/config/limits?",
+      "pages": [
+        "Environments and resource names",
+        "Turn AI reviews back on after a budget stop"
+      ],
+      "rank": {
+        "keyword": 1,
+        "vector": 1,
+        "hybrid": 1,
+        "hybrid, no prefix": 1
+      },
+      "top": {
+        "keyword": [
+          "Turn AI reviews back on after a budget stop",
+          "Environments and resource names",
+          "Turn AI reviews back on after a budget stop",
+          "ADR-005 Return stock and derive sold_out",
+          "ADR-008 Claude Haiku 4.5 through the Australian inference profile"
+        ],
+        "vector": [
+          "Environments and resource names",
+          "Start here",
+          "Code review rules",
+          "Turn AI reviews back on after a budget stop",
+          "Branches, commits and PR titles"
+        ],
+        "hybrid": [
+          "Environments and resource names",
+          "Turn AI reviews back on after a budget stop",
+          "Review a PR again or change the review level",
+          "Architecture overview",
+          "Code review rules"
+        ],
+        "hybrid, no prefix": [
+          "Turn AI reviews back on after a budget stop",
+          "Environments and resource names",
+          "Review a PR again or change the review level",
+          "Glossary",
+          "Architecture overview"
+        ]
+      }
+    },
+    {
+      "id": "q23",
+      "by": "claude",
+      "kind": "exact",
+      "question": "At what log level is a 404 response written?",
+      "pages": [
+        "Find the logs for a request"
+      ],
+      "rank": {
+        "keyword": 1,
+        "vector": 1,
+        "hybrid": 1,
+        "hybrid, no prefix": 1
+      },
+      "top": {
+        "keyword": [
+          "Find the logs for a request",
+          "Error codes",
+          "Find the logs for a request",
+          "ADR-001 One Lambda function behind the HTTP API",
+          "ADR-003 Error response format"
+        ],
+        "vector": [
+          "Find the logs for a request",
+          "Find the logs for a request",
+          "Error codes",
+          "ADR-003 Error response format",
+          "ADR-001 One Lambda function behind the HTTP API"
+        ],
+        "hybrid": [
+          "Find the logs for a request",
+          "Error codes",
+          "Find the logs for a request",
+          "ADR-003 Error response format",
+          "ADR-001 One Lambda function behind the HTTP API"
+        ],
+        "hybrid, no prefix": [
+          "Find the logs for a request",
+          "Error codes",
+          "Find the logs for a request",
+          "ADR-001 One Lambda function behind the HTTP API",
+          "ADR-003 Error response format"
+        ]
+      }
+    },
+    {
+      "id": "q24",
+      "by": "claude",
+      "kind": "multi",
+      "question": "Do the item endpoints return the stock quantity? I remember a decision that said they don't.",
+      "pages": [
+        "ADR-005 Return stock and derive sold_out",
+        "ADR-002 Keep stock out of item responses"
+      ],
+      "rank": {
+        "keyword": 1,
+        "vector": 1,
+        "hybrid": 1,
+        "hybrid, no prefix": 1
+      },
+      "top": {
+        "keyword": [
+          "ADR-002 Keep stock out of item responses",
+          "ADR-005 Return stock and derive sold_out",
+          "Writing the expected behavior block",
+          "ADR-005 Return stock and derive sold_out",
+          "Start here"
+        ],
+        "vector": [
+          "ADR-002 Keep stock out of item responses",
+          "ADR-005 Return stock and derive sold_out",
+          "ADR-005 Return stock and derive sold_out",
+          "Item API",
+          "Item API"
+        ],
+        "hybrid": [
+          "ADR-002 Keep stock out of item responses",
+          "ADR-005 Return stock and derive sold_out",
+          "ADR-005 Return stock and derive sold_out",
+          "Item API",
+          "Start here"
+        ],
+        "hybrid, no prefix": [
+          "ADR-002 Keep stock out of item responses",
+          "ADR-005 Return stock and derive sold_out",
+          "Start here",
+          "Item API",
+          "ADR-005 Return stock and derive sold_out"
+        ]
+      }
+    },
+    {
+      "id": "q25",
+      "by": "claude",
+      "kind": "multi",
+      "question": "Why did the team let the bot approve PRs, and how did the first try go?",
+      "pages": [
+        "ADR-007 Advisory mode by default, auto-approve only when code can vouch",
+        "2026-10-12 Review process check-in"
+      ],
+      "rank": {
+        "keyword": 1,
+        "vector": 2,
+        "hybrid": 1,
+        "hybrid, no prefix": 1
+      },
+      "top": {
+        "keyword": [
+          "2026-10-12 Review process check-in",
+          "Working with AI coding agents",
+          "Inventory Team",
+          "Code review rules",
+          "Team conventions"
+        ],
+        "vector": [
+          "Working with AI coding agents",
+          "ADR-007 Advisory mode by default, auto-approve only when code can vouch",
+          "Working with AI coding agents",
+          "Code review rules",
+          "2026-10-12 Review process check-in"
+        ],
+        "hybrid": [
+          "2026-10-12 Review process check-in",
+          "ADR-007 Advisory mode by default, auto-approve only when code can vouch",
+          "Code review rules",
+          "Working with AI coding agents",
+          "Turn AI reviews back on after a budget stop"
+        ],
+        "hybrid, no prefix": [
+          "2026-10-12 Review process check-in",
+          "ADR-007 Advisory mode by default, auto-approve only when code can vouch",
+          "Code review rules",
+          "Working with AI coding agents",
+          "Turn AI reviews back on after a budget stop"
+        ]
+      }
+    },
+    {
+      "id": "q26",
+      "by": "claude",
+      "kind": "multi",
+      "question": "Before I open my first PR, what has to be in the branch name and in the PR description?",
+      "pages": [
+        "Branches, commits and PR titles",
+        "Writing the expected behavior block"
+      ],
+      "rank": {
+        "keyword": 2,
+        "vector": 1,
+        "hybrid": 1,
+        "hybrid, no prefix": 2
+      },
+      "top": {
+        "keyword": [
+          "Start here",
+          "Branches, commits and PR titles",
+          "Working with AI coding agents",
+          "Working with AI coding agents",
+          "Writing the expected behavior block"
+        ],
+        "vector": [
+          "Branches, commits and PR titles",
+          "Working with AI coding agents",
+          "Working with AI coding agents",
+          "Code review rules",
+          "Start here"
+        ],
+        "hybrid": [
+          "Branches, commits and PR titles",
+          "Working with AI coding agents",
+          "Start here",
+          "Working with AI coding agents",
+          "Code review rules"
+        ],
+        "hybrid, no prefix": [
+          "Working with AI coding agents",
+          "Branches, commits and PR titles",
+          "Start here",
+          "Working with AI coding agents",
+          "Writing the expected behavior block"
+        ]
+      }
+    },
+    {
+      "id": "q30",
+      "by": "claude-low-overlap",
+      "kind": "paraphrase",
+      "question": "Our coding bots keep tripping the same automated gate on different PRs. Do we patch up each one, or is there a better place to deal with it?",
+      "pages": [
+        "Working with AI coding agents"
+      ],
+      "rank": {
+        "keyword": null,
+        "vector": 1,
+        "hybrid": 1,
+        "hybrid, no prefix": 1
+      },
+      "top": {
+        "keyword": [
+          "Decisions",
+          "2026-10-12 Review process check-in",
+          "Team conventions",
+          "ADR-005 Return stock and derive sold_out",
+          "ADR-001 One Lambda function behind the HTTP API"
+        ],
+        "vector": [
+          "Working with AI coding agents",
+          "Working with AI coding agents",
+          "ADR-007 Advisory mode by default, auto-approve only when code can vouch",
+          "Review a PR again or change the review level",
+          "Code review rules"
+        ],
+        "hybrid": [
+          "Working with AI coding agents",
+          "Team conventions",
+          "2026-10-12 Review process check-in",
+          "Working with AI coding agents",
+          "Branches, commits and PR titles"
+        ],
+        "hybrid, no prefix": [
+          "Working with AI coding agents",
+          "2026-10-12 Review process check-in",
+          "Branches, commits and PR titles",
+          "Team conventions",
+          "Working with AI coding agents"
+        ]
+      }
+    },
+    {
+      "id": "q31",
+      "by": "claude-low-overlap",
+      "kind": "paraphrase",
+      "question": "I'm new and want to poke at the backend on my laptop without touching the cloud. What do I need running?",
+      "pages": [
+        "Start here"
+      ],
+      "rank": {
+        "keyword": 2,
+        "vector": 1,
+        "hybrid": 1,
+        "hybrid, no prefix": 1
+      },
+      "top": {
+        "keyword": [
+          "Deploy to dev",
+          "Start here",
+          "Roll back a bad deploy on dev",
+          "Code review rules",
+          "Review a PR again or change the review level"
+        ],
+        "vector": [
+          "Start here",
+          "Runbooks",
+          "Architecture overview",
+          "ADR-004 Previews per ticket, not per PR",
+          "Environments and resource names"
+        ],
+        "hybrid": [
+          "Start here",
+          "Deploy to dev",
+          "Architecture overview",
+          "Architecture overview",
+          "ADR-004 Previews per ticket, not per PR"
+        ],
+        "hybrid, no prefix": [
+          "Start here",
+          "Architecture overview",
+          "Architecture overview",
+          "Deploy to dev",
+          "Review a PR again or change the review level"
+        ]
+      }
+    },
+    {
+      "id": "q32",
+      "by": "claude-low-overlap",
+      "kind": "paraphrase",
+      "question": "What happens to an earlier thumbs-up when the author adds more work to the same pull request?",
+      "pages": [
+        "Code review rules"
+      ],
+      "rank": {
+        "keyword": 1,
+        "vector": 3,
+        "hybrid": 1,
+        "hybrid, no prefix": 1
+      },
+      "top": {
+        "keyword": [
+          "Code review rules",
+          "ADR-006 Cursor pagination for the item list",
+          "ADR-006 Cursor pagination for the item list",
+          "Working with AI coding agents",
+          "Inventory Team"
+        ],
+        "vector": [
+          "Review a PR again or change the review level",
+          "ADR-007 Advisory mode by default, auto-approve only when code can vouch",
+          "Code review rules",
+          "Review a PR again or change the review level",
+          "Architecture overview"
+        ],
+        "hybrid": [
+          "Code review rules",
+          "Inventory Team",
+          "Working with AI coding agents",
+          "Branches, commits and PR titles",
+          "Review a PR again or change the review level"
+        ],
+        "hybrid, no prefix": [
+          "Code review rules",
+          "Writing the expected behavior block",
+          "Review a PR again or change the review level",
+          "Branches, commits and PR titles",
+          "Inventory Team"
+        ]
+      }
+    },
+    {
+      "id": "q33",
+      "by": "claude-low-overlap",
+      "kind": "paraphrase",
+      "question": "What catches a PR write-up that tries to sweet-talk the bot into saying yes?",
+      "pages": [
+        "Glossary",
+        "Code review rules",
+        "2026-10-12 Review process check-in"
+      ],
+      "rank": {
+        "keyword": 1,
+        "vector": 3,
+        "hybrid": 2,
+        "hybrid, no prefix": 2
+      },
+      "top": {
+        "keyword": [
+          "2026-10-12 Review process check-in",
+          "Writing the expected behavior block",
+          "Decisions",
+          "Working with AI coding agents",
+          "Start here"
+        ],
+        "vector": [
+          "Working with AI coding agents",
+          "Working with AI coding agents",
+          "Code review rules",
+          "ADR-007 Advisory mode by default, auto-approve only when code can vouch",
+          "2026-10-12 Review process check-in"
+        ],
+        "hybrid": [
+          "Working with AI coding agents",
+          "2026-10-12 Review process check-in",
+          "ADR-007 Advisory mode by default, auto-approve only when code can vouch",
+          "Start here",
+          "Writing the expected behavior block"
+        ],
+        "hybrid, no prefix": [
+          "Working with AI coding agents",
+          "2026-10-12 Review process check-in",
+          "ADR-007 Advisory mode by default, auto-approve only when code can vouch",
+          "2026-10-12 Review process check-in",
+          "Start here"
+        ]
+      }
+    },
+    {
+      "id": "q34",
+      "by": "claude-low-overlap",
+      "kind": "paraphrase",
+      "question": "Is there a live, customer-facing setup anywhere, or only places for trying things out?",
+      "pages": [
+        "Environments and resource names",
+        "Inventory Team",
+        "Deploy to dev"
+      ],
+      "rank": {
+        "keyword": null,
+        "vector": 1,
+        "hybrid": 5,
+        "hybrid, no prefix": null
+      },
+      "top": {
+        "keyword": [
+          "ADR-005 Return stock and derive sold_out",
+          "2026-10-12 Review process check-in",
+          "ADR-007 Advisory mode by default, auto-approve only when code can vouch",
+          "Item API",
+          "Start here"
+        ],
+        "vector": [
+          "Environments and resource names",
+          "ADR-004 Previews per ticket, not per PR",
+          "Start here",
+          "ADR-004 Previews per ticket, not per PR",
+          "Environments and resource names"
+        ],
+        "hybrid": [
+          "Start here",
+          "Start here",
+          "Writing the expected behavior block",
+          "2026-10-12 Review process check-in",
+          "Deploy to dev"
+        ],
+        "hybrid, no prefix": [
+          "Start here",
+          "2026-10-12 Review process check-in",
+          "Start here",
+          "Writing the expected behavior block",
+          "2026-10-12 Review process check-in"
+        ]
+      }
+    }
+  ]
+}
