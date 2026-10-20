@@ -1,0 +1,130 @@
+{
+  "run_at": "2026-10-20T10:01:48+00:00",
+  "window": {
+    "from": "2026-10-17T10:01:48+00:00",
+    "to": "2026-10-20T10:01:48+00:00"
+  },
+  "measured": {
+    "sync_runs": 179,
+    "unchanged_runs": 158,
+    "one_page_runs": 20,
+    "searches": 501,
+    "hybrid_searches": 40,
+    "log_bytes_per_sync_run": 1724,
+    "log_bytes_per_search": 773
+  },
+  "prices_usd": {
+    "lambda_gb_s": 1.33334e-05,
+    "lambda_request": 2e-07,
+    "dynamodb_read": 1.425e-07,
+    "dynamodb_write": 7.1e-07,
+    "s3_put": 5.5e-06,
+    "s3_get": 4.4e-07,
+    "s3_gb_month": 0.025,
+    "kms_request": 3e-06,
+    "titan_1k_tokens": 2.6004e-05,
+    "logs_ingest_gb": 0.67,
+    "logs_gb_month": 0.033,
+    "schedule_invocation": 1.2e-06
+  },
+  "requests_per_run": {
+    "sync, unchanged": {
+      "dynamodb_read": 5,
+      "dynamodb_write": 3,
+      "kms_request": 1
+    },
+    "sync, one page changed": {
+      "dynamodb_read": 9,
+      "dynamodb_write": 4,
+      "kms_request": 1,
+      "s3_put": 12,
+      "s3_get": 62
+    },
+    "search": {
+      "dynamodb_read": 1
+    }
+  },
+  "units": {
+    "sync run, nothing changed": {
+      "runs": 158,
+      "billed_ms": {
+        "median": 2416.0,
+        "mean": 2400,
+        "max": 3217.0
+      },
+      "cold_starts": 157,
+      "embedding_tokens": 0,
+      "parts_usd": {
+        "lambda": 1.6201852160759495e-05,
+        "requests": 5.8425e-06,
+        "embeddings": 0.0,
+        "logs": 1.1551922905027934e-06,
+        "schedule": 1.2e-06
+      },
+      "usd": 2.4399544451262287e-05
+    },
+    "sync run, one page changed": {
+      "runs": 20,
+      "billed_ms": {
+        "median": 3861.5,
+        "mean": 3950,
+        "max": 4778.0
+      },
+      "cold_starts": 20,
+      "embedding_tokens": 48,
+      "parts_usd": {
+        "lambda": 2.6533465000000004e-05,
+        "requests": 0.00010040250000000001,
+        "embeddings": 1.2403908e-06,
+        "logs": 1.1551922905027934e-06,
+        "schedule": 1.2e-06
+      },
+      "usd": 0.0001305315480905028
+    },
+    "search": {
+      "runs": 40,
+      "billed_ms": {
+        "median": 120.5,
+        "mean": 342,
+        "max": 2485.0
+      },
+      "cold_starts": 4,
+      "embedding_tokens": 25,
+      "parts_usd": {
+        "lambda": 2.4781780575e-06,
+        "requests": 2.305e-07,
+        "embeddings": 6.501e-07,
+        "logs": 5.1766125748503e-07,
+        "schedule": 0.0
+      },
+      "usd": 3.87643931498503e-06
+    }
+  },
+  "month": {
+    "edits": 100,
+    "searches": 1000,
+    "rows": {
+      "sync runs, nothing changed": {
+        "count": 4220,
+        "usd": 0.10296607758432685
+      },
+      "sync runs, one page changed": {
+        "count": 100,
+        "usd": 0.01305315480905028
+      },
+      "searches": {
+        "count": 1000,
+        "usd": 0.00387643931498503
+      },
+      "S3 storage (9.6 MB)": {
+        "count": 1,
+        "usd": 0.00024064917499999998
+      },
+      "log storage, 14 days (4.1 MB)": {
+        "count": 1,
+        "usd": 0.0001361829214216937
+      }
+    },
+    "total_usd": 0.12027250380478385
+  }
+}
