@@ -5,12 +5,14 @@ notices when a copy goes stale. This project gives an agent the current document
 read-only sync from Confluence Cloud every 10 minutes, hybrid search in a Lambda function, and a
 local MCP tool that returns every result with its source page, version and sync time.
 
+Write-up with the measurements: https://jaeneungsim.github.io/ai-team-docs/
+
 ## Status
 
 - [x] `demo-docs/`: the demo team's Confluence pages, and the script that uploads them
 - [x] v1: sync, conversion, keyword search, sources and staleness warnings, MCP tool
 - [x] v2: embeddings, hybrid search, safety checks on incoming pages
-- [ ] Evaluation: retrieval and answer quality, freshness, cost
+- [x] Evaluation: retrieval and answer quality, freshness, the Managed KB comparison, cost
 - [ ] v3: team rules as evidence in [pr-triage](https://github.com/jaeneungsim/pr-triage) reviews
 
 ## How it works
